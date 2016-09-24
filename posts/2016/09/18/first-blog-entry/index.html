@@ -6,6 +6,10 @@
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="../../../../../css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="../../../../../css/style.css" media="screen,projection">
+        <link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"  media="screen,projection"/>
+        
+       
+        
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -13,7 +17,7 @@
     <body>
         <nav class="white" role="navigation">
             <div class="nav-wrapper container">
-                <ul class="left">
+                <ul class="left hide-on-med-and-down">
                     <li>
                         <a href="../../../../../">Home</a>
                     </li>
@@ -35,15 +39,31 @@
             </div>
         </nav>
         <div class="container">
-            <div class="section">
                 <div class="row">
                     <div class="col s12">
-                
-                        <p class="flow-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                    
+                        <div id="post" class="section scrollspy">
+                            <div class="row valign-wrapper">
+                                <div class="col s2">
+                                    <img src="../../../../../images/me.png" alt="Avatar" class="circle responsive-img">
+                                </div>
+                                <div class="col s10">
+                                    <span class="grey-text text-lighten-1">
+                                        By Pavel Shchegolevatykh / September 18, 2016
+                                    </span>
+                                </div>
+                                    
+                            </div>
+                            <div class="row valign-wrapper">
+                                <div class="col s12">
+                                    <a href="https://twitter.com/shchegolevatykh" class="twitter-follow-button" data-show-count="false">Follow @shchegolevatykh</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                            </div>
+                            <h2>First blog entry</h2>
+                            <p class="flow-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            
             <div id="disqus_thread"></div>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
         </div>
@@ -52,13 +72,14 @@
         <footer>
             <div class="footer-copyright">
                 <div class="container">
-                    Made by Pavel Shchegolevatykh
+                   <!-- footer text -->
                 </div>
             </div>
         </footer>
 
         
         <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://use.fontawesome.com/061481d937.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="../../../../../js/materialize.min.js"></script>
         <script type="text/javascript" src="../../../../../js/site.js"></script>
