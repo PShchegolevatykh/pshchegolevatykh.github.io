@@ -1,0 +1,12 @@
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+nav a {
+  color: #444;
+}
+
+#disqus_thread a {
+  color: #ffab40;
+}
+
