@@ -10,3 +10,23 @@ nav a {
   color: #ffab40;
 }
 
+.card-action .col {
+  padding: 0;
+}
+
+.blog-column-container .card-action .card-social-share a {
+  margin-right: 0!important;
+  margin-left: 15px;
+}
+.blog-meta-wrapper .single-post-date {
+  color: rgba(0,0,0,0.57);
+}
+.blog .card.large {
+  height: 600px;
+}
+.disqus-comment-count {
+  margin-left: 5px;
+}
+.card-subtitle {
+  margin-bottom: 16px;
+}
