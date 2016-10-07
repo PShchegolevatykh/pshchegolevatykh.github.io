@@ -21,12 +21,28 @@ nav a {
 .blog-meta-wrapper .single-post-date {
   color: rgba(0,0,0,0.57);
 }
-.blog .card.large {
-  height: 600px;
-}
 .disqus-comment-count {
   margin-left: 5px;
 }
 .card-subtitle {
   margin-bottom: 16px;
+}
+.blog-column-container .card-image {
+  max-height: 46%!important;
+}
+.blog-column-container .card-content p, .blog #post p {
+  text-align: justify;
+}
+
+.blog a {
+  color: #ffab40;
+}
+
+.blog #post .social-share a {
+  margin-left: 15px;
+  font-size: 24px;
+}
+
+.blog #post .center img {
+  margin: 0 auto;
 }
