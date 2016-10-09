@@ -33,7 +33,7 @@ nav a {
 .blog-column-container .card-content {
   max-height: 54%!important;
 }
-.blog #post p {
+.blog #post p, .blog #about p {
   text-align: justify;
 }
 
@@ -41,11 +41,23 @@ nav a {
   color: #ffab40;
 }
 
-.blog #post .social-share a {
+.blog #post .social-share a, .blog #about .social-share a {
   margin-left: 15px;
   font-size: 24px;
 }
 
 .blog #post .center img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.promo-caption {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.blog #about .center img {
   margin: 0 auto;
 }
