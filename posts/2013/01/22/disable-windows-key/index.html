@@ -70,49 +70,41 @@
                                 </div>
                                 <div class="col s10 m10 l11">
                                     <span class="grey-text text-darken-1">
-                                        By Pavel Shchegolevatykh / January 15, 2013
+                                        By Pavel Shchegolevatykh / January 22, 2013
                                     </span>
                                 </div>
                                     
                             </div>
-                            <p class="promo-caption">How to disable Windows Update restart</p>
-                            <p class="flow-text">Many of us were victims of automatic Windows Update restart. You working with some documents, watching movie, listen to music on a background, playing StarCraft II or just left your computer on while you sleep to download some stuff (leagally of course) and BAM! This deadly Windows Update restart popup that looks like a denonator appears on the screen. And sometimes there's nothing you can do.</p>
+                            <p class="promo-caption">How to disable Windows Key on gaming PC</p>
+                            <p class="flow-text">I really like gaming, especially playing real time strategies like Starcraft 2 and Warcraft III: TFT. Today I was playing Warcraft III on new w3arena server and accidentally pressed that damn Windows Key in middle of the battle. I was looking at my desktop while my army was dying from the night elf forces without my help. It took some time for me to switch back to the game, but in Warcraft III each second matters. Unfortunately in this game, like in many other games, there is no option to disable Windows Key through the menu.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows update restart window" src="images/restart-window.png">
+                                <img class="materialboxed" data-caption="Warcraft 3 game screen" src="images/war3.png">
                             </div>
-                            <p class="flow-text">Even worse let's say your display was turned off and you won't see anything. Your PC just restarts and you don't know why that happened and wondering if you managed to save all your files.</p>
-                            <p class="flow-text">Back in the day in Windows 7 there was an option to postpone the update for the infinite time, well only if you're lucky to get there in time.</p>
+                            <p class="flow-text">When I was 12-year-old boy I solved this problem at the physical layer by pulling out Windows Key itself from the keyboard, and that solved all my problems.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Postpone windows 7 update" src="images/win7-delay.png">
+                                <img class="materialboxed" data-caption="My old keyboard" src="images/keyboard.png">
                             </div>
-                            <p class="flow-text">As far as I know in Windows 8 Microsoft changed their update policy.</p>
-                            <p class="flow-text">* From now on all updates that require PC reboot will be installed one a month. Not bad huh?<br />* They added small notification to the login screen about upcoming PC restart that shows up 3 days before the update day. It's just white noise for guys like me.<br />* Power Option menu itms were changed to "Update and restart" and "Update and shut down" respectively. Am I the only one who just push shut down button instead of using this menu? No updates will be installed in that case.</p>
+                            <p class="flow-text">That solution would not work for me now. As soon as I started using the Run menu, Command line and the hotkeys I needed this button to be present. Recently I found two ways to solve this. I found the registry method to be the easiest one but you can decide for yourself.</p>
+                            <p class="flow-text"><strong>Method 1 - Keyboard Hook Tool</strong></p>
+                            <p class="flow-text">I am sure there must be many applications that allow you to disable certain keyboard keys but I had decided to write it myself so I'll be in control of what's happenning under the hood. Also I don't trust random apps from the Internet that ask me for the admin rights. This always was a hard decision for me.</p>
+                            <p class="flow-text">I called this app <em>DieWinKey</em> and spent less that an hour to get it done. Thanks to the useful <a href="http://blogs.msdn.com/b/toub/archive/2006/05/03/589423.aspx">article</a> on MSDN blog by Stephen Toub on how to implement low level keyboard hooks in .NET.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows 7 power options" src="images/power-menu-options.png">
+                                <img class="materialboxed" data-caption="DieWinKey app interface" src="images/diewin.png">
                             </div>
-                            <p class="flow-text">I wish Microsoft would change their update policy once more. Clearly they are doing it wrong. I just want my PC to be updated automatically before it starts up. Silently like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon slightly changes and that's it! You decide if you want to update or not in YOUR own time.</p>
-                            <p class="flow-text">But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit manually in a "geeky"" way. Your grandma could not do it, but hopefully you can.</p>
-                            <p class="flow-text"><strong>Step 1 - Open Group Policy Editor</strong></p>
-                            <p class="flow-text">To run the editor press <em>Windows + R</em> and type <em>gpedit.msc</em>.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit.png">
-                            </div>
-                            <p class="flow-text"><strong>Step 2 - Find No Auto-restart Policy</strong></p>
-                            <p class="flow-text">Navigate to the following path. <em>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</em>. There should be <em>No auto-restart with logged on users for scheduled automatic updates installations</em> policy listed on the right side.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit2.png">
-                            </div>
-                            <p class="flow-text"><strong>Step 3 - Enable the Policy and Save Changes</strong></p>
-                            <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <em>Enabled</em> option. You can also leave a comment if you want to. Then press <em>Apply</em> and <em>OK</em> buttons.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Restart policy editor window" src="images/gpedit3.png">
-                            </div>
-                            <p class="flow-text">That's all you need. Hope it was useful.</p>
+                            <p class="flow-text">The main goal was to make the app very small and simple. It is a .NET 2.0 application that runs in system tray and disables both Left and Right windows keys. To shut it down you just right click and chose <em>Exit</em>. You can set it to run on windows start up (manually) or just execute each time before you run your favorite game.</p>
+                            <p class="flow-text"><a href="https://www.dropbox.com/s/rm4xa5m4ftx2sds/DieWinKey.exe">Download DieWinKey.exe</a><br /><a href="https://github.com/PShchegolevatykh/diewinkey">Source Code</a></p>
+                            <p class="flow-text"><strong>Method 2 - Windows Registry</strong></p>
+                            <p class="flow-text">Personally I love this one, because I have a dedicated gaming PC and don't use Windows key on it that often. So I've created a *.reg file that does all the things.</p>
+                            <p class="flow-text"><a href="https://www.dropbox.com/s/xyxdafjskxo3quv/disable_win_key.reg">Download DisableWinKey.reg</a></p>
+                            <p class="flow-text">Unfortunately you have to restart your PC after running the script to make things work.</p>
+                            <p class="flow-text">If you don't trust the script or want to do all the things manually here is the steps:</p>
+                            <p class="flow-text">1. Go to registry editor. <em>Run</em> -> type <em>regedit</em> -> click <em>OK</em>.<br />2. Locate the following path: <em>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout</em>.<br />3. From Edit menu or context menu chose <em>New -> Binary Value</em>.<br />4. Name it <em>Scancode Map</em>.<br />5. Type manually this sequence in value data field: <em>00000000000000000300000000005BE000005CE000000000</em>.</p>
+                            <p class="flow-text">That's it. Your can forget about your Windows Key pressings while playing. Good luck on the battlefield!</p>
                             <div class="right social-share">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
-                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
-                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
-                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -138,8 +130,8 @@
         <script type="text/javascript" src="../../../../../js/site.js"></script>
         <script>
             var disqus_config = function() {
-                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/"; // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "/posts/2013/01/15/disable-windows-update-restart/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/"; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "/posts/2013/01/22/disable-windows-key/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
             (function() { // DON'T EDIT BELOW THIS LINE
                 var d = document,
