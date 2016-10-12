@@ -70,49 +70,47 @@
                                 </div>
                                 <div class="col s10 m10 l11">
                                     <span class="grey-text text-darken-1">
-                                        By Pavel Shchegolevatykh / January 15, 2013
+                                        By Pavel Shchegolevatykh / January 30, 2013
                                     </span>
                                 </div>
                                     
                             </div>
-                            <p class="promo-caption">How to disable Windows Update restart</p>
-                            <p class="flow-text">Many of us were victims of automatic Windows Update restart. You working with some documents, watching movie, listen to music on a background, playing StarCraft II or just left your computer on while you sleep to download some stuff (leagally of course) and BAM! This deadly Windows Update restart popup that looks like a denonator appears on the screen. And sometimes there's nothing you can do.</p>
+                            <p class="promo-caption">PPPoE automation</p>
+                            <p class="flow-text">In my <a href="../../../../../posts/2013/01/29/connecting-via-pppoe/">previous</a> post I showed how to open PPPoE connection automatically at Windows startup. However there were still some issues. One of them is to find a way to keep this connection alive. After doing some research I came up with two ideas.</p>
+                            <p class="flow-text"><strong>Method 1 - Scheduled task</strong></p>
+                            <p class="flow-text">1. Open Task Scheduler window from the control panel or type <em>taskschd.msc</em> in <em>Run</em> Menu and create a new task.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows update restart window" src="images/restart-window.png">
+                                <img class="materialboxed" data-caption="Create task window" src="images/createtask.png">
                             </div>
-                            <p class="flow-text">Even worse let's say your display was turned off and you won't see anything. Your PC just restarts and you don't know why that happened and wondering if you managed to save all your files.</p>
-                            <p class="flow-text">Back in the day in Windows 7 there was an option to postpone the update for the infinite time, well only if you're lucky to get there in time.</p>
+                            <p class="flow-text">2. On <em>General</em> tab specify <em>Name</em> and <em>Description</em>. Also chose <em>Run whether user is logged on or not</em> option in order to run task in background.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Postpone windows 7 update" src="images/win7-delay.png">
+                                <img class="materialboxed" data-caption="Create task window" src="images/crtask.png">
                             </div>
-                            <p class="flow-text">As far as I know in Windows 8 Microsoft changed their update policy.</p>
-                            <p class="flow-text">* From now on all updates that require PC reboot will be installed one a month. Not bad huh?<br />* They added small notification to the login screen about upcoming PC restart that shows up 3 days before the update day. It's just white noise for guys like me.<br />* Power Option menu itms were changed to "Update and restart" and "Update and shut down" respectively. Am I the only one who just push shut down button instead of using this menu? No updates will be installed in that case.</p>
+                            <p class="flow-text">3. On <em>Triggers</em> tab add a new trigger. Set <em>Daily</em> option and Repeat task every <em>5 minutes</em> for a duration of <em>Indefinitely</em>.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows 7 power options" src="images/power-menu-options.png">
+                                <img class="materialboxed" data-caption="Triggers window" src="images/triggers.png">
                             </div>
-                            <p class="flow-text">I wish Microsoft would change their update policy once more. Clearly they are doing it wrong. I just want my PC to be updated automatically before it starts up. Silently like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon slightly changes and that's it! You decide if you want to update or not in YOUR own time.</p>
-                            <p class="flow-text">But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit manually in a "geeky"" way. Your grandma could not do it, but hopefully you can.</p>
-                            <p class="flow-text"><strong>Step 1 - Open Group Policy Editor</strong></p>
-                            <p class="flow-text">To run the editor press <em>Windows + R</em> and type <em>gpedit.msc</em>.</p>
+                            <p class="flow-text">4. On <em>Actions</em> tab add a new action. In <em>Program/script</em> text field type <em>rasdial</em>. In arguments specify your credentials: connection name, username and password separated by spaces. After that click <em>OK</em> in all windows.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit.png">
+                                <img class="materialboxed" data-caption="New action window" src="images/newaction.png">
                             </div>
-                            <p class="flow-text"><strong>Step 2 - Find No Auto-restart Policy</strong></p>
-                            <p class="flow-text">Navigate to the following path. <em>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</em>. There should be <em>No auto-restart with logged on users for scheduled automatic updates installations</em> policy listed on the right side.</p>
+                            <p class="flow-text">Then <em>Task Scheduler</em> asks you to provide your PC user credentials in order to continue. Please do that and we are all done with task creation.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit2.png">
+                                <img class="materialboxed" data-caption="PC credentials window" src="images/credentials.png">
                             </div>
-                            <p class="flow-text"><strong>Step 3 - Enable the Policy and Save Changes</strong></p>
-                            <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <em>Enabled</em> option. You can also leave a comment if you want to. Then press <em>Apply</em> and <em>OK</em> buttons.</p>
+                            <p class="flow-text">You can test it by running manually or just wait for five minutes to see if it works. One obvious drawback is that we can only specify no less than five minutes timeout to reconnect. Maybe for some reason you need less than that. A good thing that user doesn't feel anything - no frightening command prompt or other dialogs. It works just like any other background process.</p>
+                            <p class="flow-text"><strong>Method 2 - Custom Windows Service</strong></p>
+                            <p class="flow-text">As I said before for some reason you might need polling interval to be less than five minutes. For this purpose I implemented a Windows Service application that is fully configurable. You can set polling timeout and your connection details. It uses <em>rasdial</em> process internally. Works seemlessly. No annoying popups. Internal timer triggers polling for specified connection. <em>If are to change something in xml config file you should restart the service.</em> This file is located in the service application folder (<em>Program Files</em> by default). After the installation in order to run the service you can either restart your PC or run it manually using windows <em>Services</em> manager (<em>services.msc</em> using <em>Run</em> command).</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Restart policy editor window" src="images/gpedit3.png">
+                                <img class="materialboxed" data-caption="Services window" src="images/service.png">
                             </div>
-                            <p class="flow-text">That's all you need. Hope it was useful.</p>
+                            <p class="flow-text"><a href="https://www.dropbox.com/s/ezrcdrq404q4zss/PppoeConnectionDialerSetup.msi">Download PPPoE dialer service installer</a><br /><a href="https://github.com/PShchegolevatykh/pppoe-dialer">Source code</a></p>
+                            <p class="flow-text">If you found this useful feel free to thank me in comments or share this post with others.</p>
                             <div class="right social-share">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
-                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
-                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
-                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/30/pppoe-automation/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/30/pppoe-automation/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/30/pppoe-automation/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/30/pppoe-automation/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -140,14 +138,14 @@
         <script type="text/javascript" src="../../../../../js/site.js"></script>
         <script>
             var disqus_config = function() {
-                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/"; // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "/posts/2013/01/15/disable-windows-update-restart/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/01/30/pppoe-automation/"; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "/posts/2013/01/30/pppoe-automation/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
             (function() { // DON'T EDIT BELOW THIS LINE
                 var d = document,
                 s = d.createElement('script');
                 s.src = '//pshchegolevatykh.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
+                s.setAttribute('data-timestamp', + new Date());
                 (d.head || d.body).appendChild(s);
             })();
         </script>

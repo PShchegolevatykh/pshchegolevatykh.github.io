@@ -70,49 +70,28 @@
                                 </div>
                                 <div class="col s10 m10 l11">
                                     <span class="grey-text text-darken-1">
-                                        By Pavel Shchegolevatykh / January 15, 2013
+                                        By Pavel Shchegolevatykh / January 29, 2013
                                     </span>
                                 </div>
                                     
                             </div>
-                            <p class="promo-caption">How to disable Windows Update restart</p>
-                            <p class="flow-text">Many of us were victims of automatic Windows Update restart. You working with some documents, watching movie, listen to music on a background, playing StarCraft II or just left your computer on while you sleep to download some stuff (leagally of course) and BAM! This deadly Windows Update restart popup that looks like a denonator appears on the screen. And sometimes there's nothing you can do.</p>
+                            <p class="promo-caption">Connecting to the Internet on startup via PPPoE</p>
+                            <p class="flow-text">Today my non-technical neighbor asked me to reconfigure her Internet connection. She used PPPoE because her ISP Rostelecom had told her that switching to PPPoE would solve all of her connection problems. Now she has to re-connect to the Internet manually all the time, enter passwords, open connections, etc. This gets very confusing. She was wondering if it could just work. Seamlessly like it used to.</p>
+                            <p class="flow-text">When she starts surfing the Web for the first time she sees connection dialog window that requires to provide credentials every time. She did not want that kind of noise.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows update restart window" src="images/restart-window.png">
+                                <img class="materialboxed" data-caption="PPPoE connection dialog" src="images/pppoedialog.png">
                             </div>
-                            <p class="flow-text">Even worse let's say your display was turned off and you won't see anything. Your PC just restarts and you don't know why that happened and wondering if you managed to save all your files.</p>
-                            <p class="flow-text">Back in the day in Windows 7 there was an option to postpone the update for the infinite time, well only if you're lucky to get there in time.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Postpone windows 7 update" src="images/win7-delay.png">
-                            </div>
-                            <p class="flow-text">As far as I know in Windows 8 Microsoft changed their update policy.</p>
-                            <p class="flow-text">* From now on all updates that require PC reboot will be installed one a month. Not bad huh?<br />* They added small notification to the login screen about upcoming PC restart that shows up 3 days before the update day. It's just white noise for guys like me.<br />* Power Option menu itms were changed to "Update and restart" and "Update and shut down" respectively. Am I the only one who just push shut down button instead of using this menu? No updates will be installed in that case.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Windows 7 power options" src="images/power-menu-options.png">
-                            </div>
-                            <p class="flow-text">I wish Microsoft would change their update policy once more. Clearly they are doing it wrong. I just want my PC to be updated automatically before it starts up. Silently like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon slightly changes and that's it! You decide if you want to update or not in YOUR own time.</p>
-                            <p class="flow-text">But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit manually in a "geeky"" way. Your grandma could not do it, but hopefully you can.</p>
-                            <p class="flow-text"><strong>Step 1 - Open Group Policy Editor</strong></p>
-                            <p class="flow-text">To run the editor press <em>Windows + R</em> and type <em>gpedit.msc</em>.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit.png">
-                            </div>
-                            <p class="flow-text"><strong>Step 2 - Find No Auto-restart Policy</strong></p>
-                            <p class="flow-text">Navigate to the following path. <em>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</em>. There should be <em>No auto-restart with logged on users for scheduled automatic updates installations</em> policy listed on the right side.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit2.png">
-                            </div>
-                            <p class="flow-text"><strong>Step 3 - Enable the Policy and Save Changes</strong></p>
-                            <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <em>Enabled</em> option. You can also leave a comment if you want to. Then press <em>Apply</em> and <em>OK</em> buttons.</p>
-                            <div class="center">
-                                <img class="materialboxed" data-caption="Restart policy editor window" src="images/gpedit3.png">
-                            </div>
-                            <p class="flow-text">That's all you need. Hope it was useful.</p>
+                            <p class="flow-text">I thought the best practice here would be to buy a router and configure it properly to connect via PPPoE and share WiFi to all devices at home. Turned out she didn't want to buy a router and I could not convince her. She would prefer to deal with that annoying connection dialog. So I had to automate it somehow to make her life a bit easier.</p>
+                            <p class="flow-text">The first thing that came to my mind was to just move the connection shortcut to Startup folder in Windows Start Menu and configure the dialog so that it would not ask username and password each time. I did that, but after restart it didn't work as I expected. The next thing I tried is to create a batch file with necessary configuration in it and move it to the Startup folder. That actually worked fine.</p>
+                            <p class="flow-text">Here is how I did it:</p>
+                            <p class="flow-text">1. Get PPPoE connection name from Network Connections in Control Panel. You can quickly go there by typing <em>ncpa.cpl</em> in <em>Run</em> window (<em>Windows</em> + <em>R</em> hotkey).<br />2. Create a text file using notepad and enter the following line start <em>rasdial your_connection_name your_connection_username your_connection_password</em>.<br />3. Save it as <em>your_isp_name.bat</em> or any other name you like. I saved it into a new sub-folder in <em>Program Files</em> folder because, I believed, it would be more difficult for her to delete the file accidentally.<br />4. Create a windows shortcut to your batch file and move it to the <em>Startup</em> folder in Start Menu.</p>
+                            <p class="flow-text">That's pretty easy to implement, but it had many drawbacks. For example there is no easy way to reconnect automatically if something goes wrong without restarting your PC or doing this manually. I could have implemented a watchdog timer to monitor the connection but didn't have much time to do that. I'll wait for a her feedback and maybe improve it in the future. Another kind of issue was a "scary" command prompt popup at startup. Sometimes the user can see it which is a bit unfriendly.</p>
+                            <p class="flow-text">If you have any other ideas on that feel free to shere them in comments.</p>
                             <div class="right social-share">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
-                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
-                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
-                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/29/connecting-via-pppoe/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/29/connecting-via-pppoe/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/29/connecting-via-pppoe/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/29/connecting-via-pppoe/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -140,8 +119,8 @@
         <script type="text/javascript" src="../../../../../js/site.js"></script>
         <script>
             var disqus_config = function() {
-                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/"; // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "/posts/2013/01/15/disable-windows-update-restart/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/01/29/connecting-via-pppoe/"; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "/posts/2013/01/29/connecting-via-pppoe/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
             (function() { // DON'T EDIT BELOW THIS LINE
                 var d = document,
