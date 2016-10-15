@@ -76,7 +76,7 @@
                                 </div>
                                     
                             </div>
-                            <p class="promo-caption">How to disable Windows Update restart</p>
+                            <h4>How to disable Windows Update restart</h4>
                             <p class="flow-text">Many of us were victims of automatic Windows Update restart. You working with some documents, watching movie, listen to music on a background, playing StarCraft II or just left your computer on while you sleep to download some stuff (leagally of course) and BAM! This deadly Windows Update restart popup that looks like a denonator appears on the screen. And sometimes there's nothing you can do.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Windows update restart window" src="images/restart-window.png">
@@ -93,17 +93,17 @@
                             </div>
                             <p class="flow-text">I wish Microsoft would change their update policy once more. Clearly they are doing it wrong. I just want my PC to be updated automatically before it starts up. Silently like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon slightly changes and that's it! You decide if you want to update or not in YOUR own time.</p>
                             <p class="flow-text">But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit manually in a "geeky"" way. Your grandma could not do it, but hopefully you can.</p>
-                            <p class="flow-text"><strong>Step 1 - Open Group Policy Editor</strong></p>
+                            <h5>Step 1 - Open Group Policy Editor</h5>
                             <p class="flow-text">To run the editor press <em>Windows + R</em> and type <em>gpedit.msc</em>.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit.png">
                             </div>
-                            <p class="flow-text"><strong>Step 2 - Find No Auto-restart Policy</strong></p>
+                            <h5>Step 2 - Find No Auto-restart Policy</h5>
                             <p class="flow-text">Navigate to the following path. <em>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</em>. There should be <em>No auto-restart with logged on users for scheduled automatic updates installations</em> policy listed on the right side.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit2.png">
                             </div>
-                            <p class="flow-text"><strong>Step 3 - Enable the Policy and Save Changes</strong></p>
+                            <h5>Step 3 - Enable the Policy and Save Changes</h5>
                             <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <em>Enabled</em> option. You can also leave a comment if you want to. Then press <em>Apply</em> and <em>OK</em> buttons.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Restart policy editor window" src="images/gpedit3.png">
@@ -111,7 +111,7 @@
                             <p class="flow-text">That's all you need. Hope it was useful.</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
-                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="https://twitter.com/intent/tweet?text=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
                                 <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
                                 <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
                             </div>

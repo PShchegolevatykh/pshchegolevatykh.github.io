@@ -76,7 +76,7 @@
                                 </div>
                                     
                             </div>
-                            <p class="promo-caption">How to disable Windows Key on gaming PC</p>
+                            <h4>How to disable Windows Key on gaming PC</h4>
                             <p class="flow-text">I really like gaming, especially playing real time strategies like Starcraft 2 and Warcraft III: TFT. Today I was playing Warcraft III on new w3arena server and accidentally pressed that damn Windows Key in middle of the battle. I was looking at my desktop while my army was dying from the night elf forces without my help. It took some time for me to switch back to the game, but in Warcraft III each second matters. Unfortunately in this game, like in many other games, there is no option to disable Windows Key through the menu.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Warcraft 3 game screen" src="images/war3.png">
@@ -86,7 +86,7 @@
                                 <img class="materialboxed" data-caption="My old keyboard" src="images/keyboard.png">
                             </div>
                             <p class="flow-text">That solution would not work for me now. As soon as I started using the Run menu, Command line and the hotkeys I needed this button to be present. Recently I found two ways to solve this. I found the registry method to be the easiest one but you can decide for yourself.</p>
-                            <p class="flow-text"><strong>Method 1 - Keyboard Hook Tool</strong></p>
+                            <h5>Method 1 - Keyboard Hook Tool</h5>
                             <p class="flow-text">I am sure there must be many applications that allow you to disable certain keyboard keys but I had decided to write it myself so I'll be in control of what's happenning under the hood. Also I don't trust random apps from the Internet that ask me for the admin rights. This always was a hard decision for me.</p>
                             <p class="flow-text">I called this app <em>DieWinKey</em> and spent less that an hour to get it done. Thanks to the useful <a href="http://blogs.msdn.com/b/toub/archive/2006/05/03/589423.aspx">article</a> on MSDN blog by Stephen Toub on how to implement low level keyboard hooks in .NET.</p>
                             <div class="center">
@@ -94,7 +94,7 @@
                             </div>
                             <p class="flow-text">The main goal was to make the app very small and simple. It is a .NET 2.0 application that runs in system tray and disables both Left and Right windows keys. To shut it down you just right click and chose <em>Exit</em>. You can set it to run on windows start up (manually) or just execute each time before you run your favorite game.</p>
                             <p class="flow-text"><a href="https://www.dropbox.com/s/rm4xa5m4ftx2sds/DieWinKey.exe">Download DieWinKey.exe</a><br /><a href="https://github.com/PShchegolevatykh/diewinkey">Source Code</a></p>
-                            <p class="flow-text"><strong>Method 2 - Windows Registry</strong></p>
+                            <h5>Method 2 - Windows Registry</h5>
                             <p class="flow-text">Personally I love this one, because I have a dedicated gaming PC and don't use Windows key on it that often. So I've created a *.reg file that does all the things.</p>
                             <p class="flow-text"><a href="https://www.dropbox.com/s/xyxdafjskxo3quv/disable_win_key.reg">Download DisableWinKey.reg</a></p>
                             <p class="flow-text">Unfortunately you have to restart your PC after running the script to make things work.</p>
@@ -103,7 +103,7 @@
                             <p class="flow-text">That's it. Your can forget about your Windows Key pressings while playing. Good luck on the battlefield!</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
-                                <a href="https://twitter.com/home?status=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="https://twitter.com/intent/tweet?text=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
                                 <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
                                 <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/01/22/disable-windows-key/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
                             </div>
