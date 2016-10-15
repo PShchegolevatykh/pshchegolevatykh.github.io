@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="../../../../../css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../../../../../css/style.css" media="screen,projection">
+        <link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../../../../../css/prism.css" media="screen,projection">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--Favicon related-->
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../../../apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../../../../../apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../../../../apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../../../../apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="Pavel Shchegolevatykh's Blog'"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="../../../../../mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="../../../../../mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="../../../../../mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="../../../../../mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="../../../../../mstile-310x310.png" />
+        <!--SEO-->
+        <meta name="description" content="Pavel Shchegolevatykh is a software developer, who used to be in eSports. Writes about programming, lifestyle, gaming, hobbies and other topics.">
+	    <meta name="author" content="Pavel Shchegolevatykh">
+        <title>Pavel Shchegolevatykh - Programming, Lifestyle, Gaming, Hobbies, Random Thoughts</title>
+    </head>
+
+    <body>
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <ul class="left hide-on-med-and-down">
+                    <li>
+                        <a href="../../../../../">Home</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../about/">About</a>
+                    </li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+                    <li>
+                        <a href="../../../../../">Home</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../about/">About</a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+        <div class="container blog">
+                <div class="row">
+                    <div class="col s12">
+                        <div id="post" class="section scrollspy">
+                            <div class="row valign-wrapper">
+                                <div class="col s2 m2 l1">
+                                    <a href="../../../../../about/"><img src="../../../../../images/me.png" alt="Avatar" class="circle responsive-img"></a>
+                                </div>
+                                <div class="col s10 m10 l11">
+                                    <span class="grey-text text-darken-1">
+                                        By Pavel Shchegolevatykh / March 24, 2013
+                                    </span>
+                                </div>
+                                    
+                            </div>
+                            <h4>Burglar alarm with Netduino Plus</h4>
+                            <p class="flow-text">IoT is becoming more popular these days. There are plenty of powerful microcontrollers on the market that don't require you to be C, ASM or Electronics guru to make some pretty cool stuff. You can create Embedded Systems even in .NET.</p>
+                            <p class="flow-text">Two months ago I received my <a href="http://www.netduino.com/netduinoplus/specs.htm">Netduino Plus</a> board from <a href="https://www.sparkfun.com/">sparkfun</a> and implemented a somewhat useful project. I called it Secure Room. It consists of two basic parts: Netduino Plus board and PIR Motion Sensor. There are many such sensors available on eBay for a reasonable price. You can chose any of those or you can order <a href="https://www.sparkfun.com/products/8630">one</a> from sparkfun.</p>
+                            <p class="flow-text">The working algorithm is pretty straightforward. PIR Sensor detects any motion in the room and sends the interruption to Netduino Plus board (think of it as an event). Then on the board itself that interruptions get wrapped into a meaningful message and sent via LAN as E-mail messages to the recipient. It could be you, your friends or relatives or even a police department. Also you can send those messages as SMS using E-mail to SMS gateway. Fortunately my phone provider has this feature.</p>
+                            <h5>Connecting Netduino Plus board to the Internet</h5>
+                            <p class="flow-text">First thing you should do is to configure your IP address for Netduino Plus. Assuming you have a router that implements Dynamic Host Configuration Protocol (DHCP). Sometimes a modem also has a built-in router. DHCP it's just a thing that allows Netduino Plus to get an IP address in your network automatically. In modern world every router supports DHCP.</p>
+                            <p class="flow-text">Anyway to configure Netduino Plus use <em>MFDeploy</em> tool. You can find it by looking in the directory: <em>C:\Program Files (x86)\Microsoft .NET Micro Framework\v4.1\Tools\MFDeploy.exe</em> on 64 bit operating system or you can use Start Menu shortcuts. Connect your device to your PC via USB cable, run MFDeploy tool, chose USB connection and click <em>Ping</em> button to make sure the device responds. You should see <em>Pinging… TinyCLR</em> message if everything is OK. If you don't see this message make try to reconnect device in the same or in the other USB port (yes, sometimes it is that simple).</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="MFDeploy tool ping" src="images/MFDeployPing.png">
+                            </div>
+                            <p class="flow-text">In the <em>Target</em> menu select <em>Configuration -> Network</em>. The Network Configuration dialog box opens. Enter your Netduino plus MAC address there (the MAC address printed on the sticker at the bottom of the board). Sometimes MAC address gets entered automatically. Ignore other fields if you have DHCP router. And click <em>Update</em>.</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="MFDeploy tool ping" src="images/MFDeployNetwork2.png">
+                            </div>
+                            <p class="flow-text">Make sure you have added Netduino MAC address to your router MAC filters table if you do such thing for security reasons. You should.</p>
+                            <h5>Connecting PIR Motion Sensor</h5>
+                            <p class="flow-text">As I mentioned before any sensor would work. Here I just show you a board layout because many people (especially those who came from .NET world like me) have troubles with the wiring. PIR sensor has three pins: one for voltage supply, one for actual detection and the ground pin.</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="Netduino Plus PIR layout" src="images/netduino_plus_pir_layout.png">
+                            </div>
+                            <p class="flow-text">Connect your voltage supply to a 5V pin on Netduino Plus board, signal pin could be connected to any digital pin (I use D0 here). The ground PIR sensor lead should be connected to (surprise, surprise!) ground pin on the board. For people how read the schematics better I also show layout in that format below. I used <a href="http://fritzing.org/home/">Fritzing CAD</a> software for both layouts.</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="Netduino Plus PIR layout schematics" src="images/netduino_plus_pir_schema2.png">
+                            </div>
+                            <p class="flow-text">We are all done with the wiring. Now lets move on to the C# code.</p>
+                            <h5>Programming part</h5>
+                            <p class="flow-text">Unfortunately .NET Micro Framework does not have an <em>SmtpClient</em> class for sending emails so I decided to use a third party library called <em>Bansky.SPOT.Mail</em> written by Pavel Bansky. You can download it on his <a href="http://bansky.net/blog/2008/08/sending-e-mails-from-net-micro-framework/">website</a> and use in your projects. This library is designed to be similar to official .NET Framework SmtpClient class, so it is very easy to work with.</p>
+                            <p class="flow-text">Besides E-mail sending stuff we have to work with PIR motion sensor as well. I think it is a good practice to make a sensor wrapper class.</p>
+<pre><code class="language-csharp">public delegate void PirTriggeredEventHandler(bool triggered, DateTime time);
+
+public class PirSensor 
+{
+    private InterruptPort sensor;
+    
+    public event PirTriggeredEventHandler SensorTriggered;
+
+    public PirSensor(Cpu.Pin pinNumber)
+    {
+        sensor =
+            new InterruptPort(
+                pinNumber,
+                false,
+                Port.ResistorMode.PullUp,
+                Port.InterruptMode.InterruptEdgeBoth);
+
+            sensor.OnInterrupt +=
+                new NativeEventHandler(
+                    (data1, data2, time) =>
+                    {
+                        OnSensorTriggered(data1, data2, time);
+                    }
+            );
+
+    }
+
+    private void OnSensorTriggered(uint data1, uint data2, DateTime time)
+    {
+        var evt = SensorTriggered;
+        if (evt != null)
+            evt.Invoke(data2 == 1, time);
+
+    } 
+}</code></pre>
+                            <p class="flow-text">The next thing we should do is implement the main method that should connect all the pieces together.</p>
+<pre><code class="language-csharp">public class Program
+{
+    private static OutputPort onBoardLed = new OutputPort(Pins.ONBOARD_LED, false);
+    public static void Main()
+    {
+        PirSensor pir = new PirSensor(Pins.GPIO_PIN_D0);
+        pir.SensorTriggered += OnSensorTriggered;
+        while (true)
+        {
+            Thread.Sleep(2000); // just waiting for pir interruptions forever
+        }
+    }
+    static void OnSensorTriggered(bool triggered, DateTime time)
+    {
+        SendEmail();
+    }
+    public static void SendEmail()
+    {
+        onBoardLed.Write(true);
+        MailMessage message = new MailMessage();
+        message.From = new MailAddress("yourmail.test@yourserver.com", "Pavel Shchegolevatykh");
+        message.To.Add(new MailAddress("yournumber@sms.beemail.ru", "Pavel Shchegolevatykh"));
+        message.Subject = "Dangerous activity";
+        message.Body = "There are some dangerous activity in your secure room!";
+        message.IsBodyHtml = false;
+        SmtpClient smtp = new SmtpClient("smtp.yoursever.com", 25);
+        try
+        {
+            smtp.Authenticate = true;
+            smtp.Username = "yourname";
+            smtp.Password = "yourpassword";
+            smtp.Send(message);
+        }
+        catch (SmtpException e)
+        {
+            Debug.Print(e.Message);
+            Debug.Print("Error Code: " + e.ErrorCode.ToString());
+        }
+        finally
+        {
+            smtp.Dispose();
+        }
+        onBoardLed.Write(false);
+    }
+}</code></pre>
+                            <p class="flow-text">In my implementation I use onboard LED to indicate when the object detected by the sensor (light ON) and when the e-mail message sent (light OFF). All the SMTP client exceptions are handled, so if a connection breaks or e-mail server stops working it doesn't crash the device code. It will keep sending e-mails.</p>
+                            <h5>Demo and Resources</h5>
+                            <p class="flow-text">I went one step further and implemented this using E-mail to SMS gateway via beemail (my phone provider-specific thing). So I can receive the messages even on my old Nokia 3310.</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="IPhone message" src="images/message.png">
+                            </div>
+                            <p class="flow-text">The picture above shows how message looks on my IPhone 3GS. Hope this was useful.</p>
+                            <div class="video-container">
+                                <iframe src="//www.youtube.com/embed/Lk-69zDXTuU" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <p class="flow-text"><em>UPDATE1:</em> I added a time delay between interruptions because PIR sended them too fast and too many. Interruption date and time was added to the message body. Date and time syncs with NTP server at device startup. Check out github code repo and see it for yourself.</p>
+                            <p class="flow-text"><em>UPDATE2:</em> The project has become pretty robust. I've added a new piece of hardware called <a href="https://www.seeedstudio.com/gprs-shield-p-779.html">Seeed GSM Shield</a> that would allow me to send SMS messages directly from the device if the Internet connection drops.</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="Modified Netduino board" src="images/netduino.jpg">
+                            </div>
+                            <p class="flow-text">Also added a microSD card as a temp message storage. Basically the app tries to send messages on both GSM and LAN gateways. If something goes wrong with either of them the messages get stored on the microSD card to be sent later. The PIR reading interval was set to 60 seconds to avoid multiple interruptions overload.</p>
+                            <div class="center">
+                                <img class="materialboxed" data-caption="Modified Netduino board" src="images/packages.png">
+                            </div>
+                            <p class="flow-text">I showed only the basic package view of the system architecture to keep things simple. You can always take a look at the <a href="https://github.com/PShchegolevatykh/secure-room/tree/master/SecureRoom">source code</a> to see how things work under the hood. Feel free to leave some feedback.</p>
+                            <div class="right social-share">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/03/24/burglar-alarm/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/intent/tweet?text=http://pshchegolevatykh.netlify.com/posts/2013/03/24/burglar-alarm/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/03/24/burglar-alarm/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/03/24/burglar-alarm/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <div id="comments">
+                <div id="disqus_thread"></div>
+            </div>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+                                    
+
+        <footer>
+            <div class="footer-copyright">
+                <div class="container">
+                   <!-- footer text -->
+                </div>
+            </div>
+        </footer>
+        
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://use.fontawesome.com/061481d937.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../../../../js/materialize.min.js"></script>
+        <script type="text/javascript" src="../../../../../js/site.js"></script>
+        <script type="text/javascript" src="../../../../../js/prism.js"></script>
+        <script>
+            var disqus_config = function() {
+                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/03/24/burglar-alarm/"; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "/posts/2013/03/24/burglar-alarm/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                s = d.createElement('script');
+                s.src = '//pshchegolevatykh.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </body>
+</html>
