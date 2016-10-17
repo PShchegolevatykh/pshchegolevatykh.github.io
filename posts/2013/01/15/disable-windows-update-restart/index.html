@@ -94,17 +94,17 @@
                             <p class="flow-text">I wish Microsoft would change their update policy once more. Clearly they are doing it wrong. I just want my PC to be updated automatically before it starts up. Silently like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon slightly changes and that's it! You decide if you want to update or not in YOUR own time.</p>
                             <p class="flow-text">But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit manually in a "geeky"" way. Your grandma could not do it, but hopefully you can.</p>
                             <h5>Step 1 - Open Group Policy Editor</h5>
-                            <p class="flow-text">To run the editor press <em>Windows + R</em> and type <em>gpedit.msc</em>.</p>
+                            <p class="flow-text">To run the editor press <strong>Windows + R</strong> and type <strong>gpedit.msc</strong>.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit.png">
                             </div>
                             <h5>Step 2 - Find No Auto-restart Policy</h5>
-                            <p class="flow-text">Navigate to the following path. <em>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</em>. There should be <em>No auto-restart with logged on users for scheduled automatic updates installations</em> policy listed on the right side.</p>
+                            <p class="flow-text">Navigate to the following path. <strong>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</strong>. There should be <strong>No auto-restart with logged on users for scheduled automatic updates installations</strong> policy listed on the right side.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit2.png">
                             </div>
                             <h5>Step 3 - Enable the Policy and Save Changes</h5>
-                            <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <em>Enabled</em> option. You can also leave a comment if you want to. Then press <em>Apply</em> and <em>OK</em> buttons.</p>
+                            <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <strong>Enabled</strong> option. You can also leave a comment if you want to. Then press <strong>Apply</strong> and <strong>OK</strong> buttons.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Restart policy editor window" src="images/gpedit3.png">
                             </div>
