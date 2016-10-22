@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="../../../../../css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../../../../../css/style.css" media="screen,projection">
+        <link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../../../../../css/prism.css" media="screen,projection">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--Favicon related-->
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../../../apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../../../../../apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../../../../apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../../../../apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="../../../../../favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="Pavel Shchegolevatykh's Blog'"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="../../../../../mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="../../../../../mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="../../../../../mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="../../../../../mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="../../../../../mstile-310x310.png" />
+        <!--SEO-->
+        <meta name="description" content="Pavel Shchegolevatykh is a software developer, who used to be in eSports. Writes about programming, lifestyle, gaming, hobbies and other topics.">
+	    <meta name="author" content="Pavel Shchegolevatykh">
+        <title>Pavel Shchegolevatykh - Programming, Lifestyle, Gaming, Hobbies, Random Thoughts</title>
+    </head>
+
+    <body>
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <ul class="left hide-on-med-and-down">
+                    <li>
+                        <a href="../../../../../">Home</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../about/">About</a>
+                    </li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+                    <li>
+                        <a href="../../../../../">Home</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../about/">About</a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+        <div class="container blog">
+                <div class="row">
+                    <div class="col s12">
+                        <div id="post" class="section scrollspy">
+                            <div class="row valign-wrapper">
+                                <div class="col s2 m2 l1">
+                                    <a href="../../../../../about/"><img src="../../../../../images/me.png" alt="Avatar" class="circle responsive-img"></a>
+                                </div>
+                                <div class="col s10 m10 l11">
+                                    <span class="grey-text text-darken-1">
+                                        By Pavel Shchegolevatykh / August 19, 2013
+                                    </span>
+                                </div>
+                                    
+                            </div>
+                            <h4>Common issues with Oracle XE database</h4>
+                            <p class="flow-text">Working with Oracle XE as a beginner I faced with many issues that took me hours or even days to fix. Here I'd like to mention two of them: <strong>ORA-12705</strong> and <strong>ORA-12514</strong>.</p>
+                            <h5>Fixing ORA-12705</h5>
+                            <p class="flow-text">This issue relates to people who connects to the Oracle DB server from the the environment with different language settings. For in my case the server was located in Germany and I was connecting from the Russian PC. I found multiple answers on the Internet and many of them just didn't work. Some of them suggested configuring the server enviroment which I didn't have access to. But first things first.</p>
+                            <p class="flow-text">When I try to connect to Oracle Database via <strong>SQL Developer</strong> or plain JDBC I was getting an error:</p>
+                            <p class="flow-text"><strong>ORA-12705: Cannot access NLS data files or invalid environment specified.</strong></p>
+                            <p class="flow-text">Of course none of my German colleagues were having this issue. It was all fine for them, and because I was the only foreigner in the project I had to find a solution to this all by myself. Solving problems was my job after all.</p>
+                            <p class="flow-text">The most popular advice on the Web was to change the values for <strong>NLS_LANG</strong> subkey from Windows Registry or remove it completely (<strong>HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE</strong>). I tried both but it didn't work for some reason.</p>
+                            <p class="flow-text">What did work is to manually <strong>tell the JVM what region and language it should be using</strong>. For example to make the connection work in Oracle SQL Developer you should find the <strong>sqldeveloper.conf</strong> config file (under <strong>sqldeveloper\bin</strong> folder) then open it and add those two lines:</p>
+<pre><code class="language-markup">AddVMOption -Duser.language=en
+AddVMOption -Duser.region=us</code></pre>
+                            <p class="flow-text">If you use Eclipse IDE you should add those lines into the <strong>eclipse.ini</strong> config file (it can be found under the root eclipse folder):</p>
+<pre><code class="language-markup">-Duser.language=en
+-Duser.country=US</code></pre>
+                            <p class="flow-text">Also you should supply those parameters to your JRE(JDK). To do this go to <strong>Window -> Preferences -> Java -> Installed JREs -> [Chose your JRE(JDK)] -> Edit</strong>. Near the <strong>Default VM Parameters</strong> enter this line:</p>
+<pre><code class="language-markup">-Duser.language=en -Duser.region=US</code></pre>
+                            <p class="flow-text">This should solve your connection problems without any code changes. If none of this works you can always hardcode the language locally before making a DB connection through the code:</p>
+<pre><code class="language-java">Locale.setDefault(Locale.ENGLISH);</code></pre>
+                            <p class="flow-text">Do not commit this and use as a workaround. Hope you won't need this.</p>
+                            
+                            <h5>Fixing ORA-12514</h5>
+                            <p class="flow-text">This is connected to making a database backup, which I had to do quite often as a part of my job. I was not a DBA or Oracle expert in any way. I thought this should be a pretty simple task. I was wrong. In Oracle we don't trust.</p>
+                            <p class="flow-text">So I was getting an <strong>ORA-12514</strong> error trying to make a database dump file (*.dmp) of the existing schema using the imp command via console:</p>
+<pre><code class="language-markup">imp pshchegolavatykh/mypassword@mydb file=C:\SomeFolder\DbDump\LatestDate.dmp full=y</code></pre>
+                            <p class="flow-text">Oh by the way if you don't specify the <strong>full=y</strong> flag you will get a message that <strong>import was successful</strong> but <strong>there would not be any real changes</strong>. WTF Oracle?</p>
+                            <p class="flow-text">Anyway it turned out that the system did not know about <strong>mydb</strong> identifier by default. You have to manually edit <strong>tsnames.ora</strong> file and map this id to the actual connection string. After you've done that you can use <strong>mydb</strong> as an alias.</p>
+                            <p class="flow-text">Usually <strong>tsnames.ora</strong> file is located under <strong>&lt;OracleInstallationFolder&gt;\NETWORK\ADMIN</strong> directory. If you forgot where the Oracle DB Instance is installed use Windows File Search.</p>
+                          
+                            <p class="flow-text">Open the file, using any text editor. Remove everything and paste those lines:</p>
+<pre><code class="language-markup">&lt;addressname&gt; =
+ (DESCRIPTION =
+   (ADDRESS_LIST =
+     (ADDRESS = (PROTOCOL = TCP)(Host = &lt;hostname&gt;)(Port = &lt;port&gt;))
+   )
+ (CONNECT_DATA =
+   (SERVICE_NAME = &lt;sid&gt;)
+ )
+)</code></pre>
+                            <p class="flow-text">Insted of the placeholders use your own data. It should look something like this:</p>
+<pre><code class="language-markup">MYDB =
+ (DESCRIPTION = 
+   (ADDRESS_LIST =
+     (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+   )
+ (CONNECT_DATA =
+   (SERVICE_NAME = mydb)
+ )
+)</code></pre>
+                            <p class="flow-text">If you are not sure what <strong>sid</should> you should put there try this query in SQL Developer or any other similar tool:</p>
+<pre><code class="language-sql">SELECT value FROM v$parameter WHERE name='service_names';</code></pre>
+                            <p class="flow-text">You'll see the correct <strong>sid</strong> in the results.</p>
+                            <p class="flow-text">That's all you need. Thanks Oracle. You can check if your config works properly by connecting to the database in <strong>sqlplus</strong>:</p>
+<pre><code class="language-markup">sqlplus pshchegolevatykh/masterkey@mydb</code></pre>
+                            <p class="flow-text">Hope this was usesful.</p>
+                            <div class="right social-share">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pshchegolevatykh.netlify.com/posts/2013/08/19/common-oracle-issues/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/intent/tweet?text=http://pshchegolevatykh.netlify.com/posts/2013/08/19/common-oracle-issues/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                                <a href="http://vk.com/share.php?url=http://pshchegolevatykh.netlify.com/posts/2013/08/19/common-oracle-issues/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?url=http://pshchegolevatykh.netlify.com/posts/2013/08/19/common-oracle-issues/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <div id="comments">
+                <div id="disqus_thread"></div>
+            </div>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+                                    
+
+        <footer>
+            <div class="footer-copyright">
+                <div class="container">
+                   <!-- footer text -->
+                </div>
+            </div>
+        </footer>
+        
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://use.fontawesome.com/061481d937.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../../../../js/materialize.min.js"></script>
+        <script type="text/javascript" src="../../../../../js/site.js"></script>
+        <script type="text/javascript" src="../../../../../js/prism.js"></script>
+        <script>
+            var disqus_config = function() {
+                this.page.url = "http://pshchegolevatykh.netlify.com/posts/2013/08/19/common-oracle-issues/"; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "/posts/2013/08/19/common-oracle-issues/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                s = d.createElement('script');
+                s.src = '//pshchegolevatykh.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </body>
+</html>
