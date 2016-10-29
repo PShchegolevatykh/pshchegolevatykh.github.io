@@ -77,22 +77,22 @@
                                     
                             </div>
                             <h4>How to disable Windows Key on gaming PC</h4>
-                            <p class="flow-text">I really like gaming, especially playing real time strategies like Starcraft 2 and Warcraft III: TFT. Today I was playing Warcraft III on new w3arena server and accidentally pressed that damn Windows Key in middle of the battle. I was looking at my desktop while my army was dying from the night elf forces without my help. It took some time for me to switch back to the game, but in Warcraft III each second matters. Unfortunately in this game, like in many other games, there is no option to disable Windows Key through the menu.</p>
+                            <p class="flow-text">I like gaming, especially real time strategies like Starcraft 2 and Warcraft III: TFT. Today I was playing Warcraft III online and accidentally pressed that damn Windows Key in middle of the battle. I was looking at my desktop while my army was dying from the night elf forces without my help. It took some time for me to switch back to the game, but in Warcraft III each second matters. Unfortunately in this game (like in many other games) there is no option to disable Windows Key through the menu.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="Warcraft 3 game screen" src="images/war3.png">
                             </div>
-                            <p class="flow-text">When I was 12-year-old boy I solved this problem at the physical layer by pulling out Windows Key itself from the keyboard, and that solved all my problems.</p>
+                            <p class="flow-text">When I was 12-year-old boy I solved this problem by pulling out Windows Key itself from the keyboard. That was good enough.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="My old keyboard" src="images/keyboard.png">
                             </div>
                             <p class="flow-text">That solution would not work for me now. As soon as I started using the Run menu, Command line and the hotkeys I needed this button to be present. Recently I found two ways to solve this. I found the registry method to be the easiest one but you can decide for yourself.</p>
                             <h5>Method 1 - Keyboard Hook Tool</h5>
-                            <p class="flow-text">I am sure there must be many applications that allow you to disable certain keyboard keys but I had decided to write it myself so I'll be in control of what's happenning under the hood. Also I don't trust random apps from the Internet that ask me for the admin rights. This always was a hard decision for me.</p>
+                            <p class="flow-text">I am sure there must be many applications that allow you to disable certain keys. I though decided to write it myself so I'll be in control of what's happening under the hood. Also I don't trust random apps from the Internet that ask me for the admin rights. This always was a hard decision for me.</p>
                             <p class="flow-text">I called this app <strong>DieWinKey</strong> and spent less that an hour to get it done. Thanks to the useful <a href="http://blogs.msdn.com/b/toub/archive/2006/05/03/589423.aspx">article</a> on MSDN blog by Stephen Toub on how to implement low level keyboard hooks in .NET.</p>
                             <div class="center">
                                 <img class="materialboxed" data-caption="DieWinKey app interface" src="images/diewin.png">
                             </div>
-                            <p class="flow-text">The main goal was to make the app very small and simple. It is a .NET 2.0 application that runs in system tray and disables both Left and Right windows keys. To shut it down you just right click and chose <strong>Exit</strong>. You can set it to run on windows start up (manually) or just execute each time before you run your favorite game.</p>
+                            <p class="flow-text">The main goal was to make the app small and simple. It is a .NET 2.0 application that runs in system tray and disables both Left and Right windows keys. To shut it down you just right click and chose <strong>Exit</strong>. You can set it to run on windows start up (manually) or just execute each time before you run your favorite game.</p>
                             <p class="flow-text"><a href="https://www.dropbox.com/s/rm4xa5m4ftx2sds/DieWinKey.exe">Download DieWinKey.exe</a><br /><a href="https://github.com/PShchegolevatykh/diewinkey">Source Code</a></p>
                             <h5>Method 2 - Windows Registry</h5>
                             <p class="flow-text">Personally I love this one, because I have a dedicated gaming PC and don't use Windows key on it that often. So I've created a *.reg file that does all the things.</p>
