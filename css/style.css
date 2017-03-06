@@ -33,9 +33,6 @@ nav a {
 .blog-column-container .card-content {
   max-height: 54%!important;
 }
-.blog #post p, .blog #about p {
-  text-align: justify;
-}
 
 .blog a {
   color: #ffab40;
