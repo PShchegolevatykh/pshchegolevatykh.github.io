@@ -5,17 +5,18 @@ nav .brand-logo {
 nav a {
   color: #444;
 }
-
-#disqus_thread a {
+.blog a {
+  color: #ffab40;
+}
+.comments-section a {
   color: #ffab40;
 }
 
 .card-action .col {
   padding: 0;
 }
-
-.blog-column-container .card-action .card-social-share a {
-  margin-right: 0!important;
+.blog-column-container .card-action .card-social-share a:not(.btn):not(.btn-large):not(.btn-floating) {
+  margin-right: 0;
   margin-left: 15px;
 }
 .blog-meta-wrapper .single-post-date {
@@ -27,23 +28,24 @@ nav a {
 .card-subtitle {
   margin-bottom: 16px;
 }
-.blog-column-container .card-image {
-  max-height: 46%!important;
+
+
+/* Forcing card image to display in 16:9 format */
+.blog-column-container .card.small .card-image, .card.medium .card-image, .card.large .card-image {
+  max-height: 46%;
 }
-.blog-column-container .card-content {
-  max-height: 54%!important;
+.blog-column-container .card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
+  max-height: 54%;
 }
 
-.blog a {
-  color: #ffab40;
-}
-
-.blog #post .social-share a, .blog #about .social-share a {
+/* Making social links bigger and giving them more space between each other */
+.blog-content .social-share a {
   margin-left: 15px;
   font-size: 24px;
 }
 
-.blog #post .center img {
+/* Reseting margins and making images scale on mobile devices */
+.blog-content .center img {
    margin: 0 auto;
    max-width: 100%;
    height: auto;
@@ -54,8 +56,4 @@ nav a {
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 0;
-}
-
-.blog #about .center img {
-  margin: 0 auto;
 }
