@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../../../../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../../../../../css/style.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="../../../../../css/prism.css" media="screen,projection">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Favicon related-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../../../apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../../apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../../../apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../../apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../../../../../apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../../../../apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../../../../apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../../../../../favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../../../../../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../../../../../favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../../../../favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../../../../../favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Pavel Shchegolevatykh's Blog'" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../../../../../mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../../../../../mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../../../../../mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../../../../../mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../../../../../mstile-310x310.png" />
+    <!--SEO-->
+    <meta name="description" content="Pavel Shchegolevatykh is a software developer, who used to be in eSports. Writes about programming, lifestyle, gaming, hobbies and other topics.">
+    <meta name="author" content="Pavel Shchegolevatykh">
+    <title>Pavel Shchegolevatykh - Programming, Lifestyle, Gaming, Hobbies, Random Thoughts</title>
+</head>
+
+<body>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a href="../../../../../">Home</a>
+                </li>
+                <li>
+                    <a href="../../../../../about/">About</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+                <li>
+                    <a href="../../../../../">Home</a>
+                </li>
+                <li>
+                    <a href="../../../../../about/">About</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+        </div>
+    </nav>
+    <div class="container blog">
+        <div class="row">
+            <div class="col s12">
+                <div id="post" class="section scrollspy blog-content">
+                    <div class="row valign-wrapper">
+                        <div class="col s2 m2 l1">
+                            <a href="../../../../../about/"><img src="../../../../../images/me.png" alt="Avatar" class="circle responsive-img"></a>
+                        </div>
+                        <div class="col s10 m10 l11">
+                            <span class="grey-text text-darken-1">
+                                        By Pavel Shchegolevatykh / September 16, 2017
+                                    </span>
+                        </div>
+
+                    </div>
+                    <h4>Optimizing Logitech Mini Optical Mouse for StarCraft: Remastered and StarCraft II</h4>
+                    <p class="flow-text">First, I would like to mention that <a href="https://www.amazon.com/Logitech-930732-0403-Mini-Optical-Mouse/dp/B00006HMPF">Logitech Mouse Optical (M-UV55A)</a>                        is my current mouse of choice. I have small hands, and it has a perfect shape for my fingertip grip.
+                        What works for me might not work for others though. Be careful. I tried many different mice before
+                        such as Razer Krait, Razer Salmosa (both Asian and EU versions), Razer Abyssus, Logitech G303, Logitech
+                        G102, Logitech G1. They were all good but not perfect.</p>
+                    <div class="center">
+                        <img class="materialboxed" data-caption="Logitech Mouse Optical with other mice" src="images/lmo-with-other-mice.jpg">
+                    </div>
+                    <p class="flow-text">So I ended up getting the used ASUS version of LMO (silver color on the picture). Although the shape of LMO is fine, its 400 DPI sensor
+                        can be a huge problem in modern games. Fortunately, there are some ways to improve the in-game experience.</p>
+                    <h5>You can't avoid software scaling</h5>
+                    <p class="flow-text">By scaling here I mean software adjustment of mouse sensitivity so the cursor moves faster. Ideally,
+                        you would not want to have any software scaling. It's better to leave the built-in mouse DPI settings
+                        as they are so the cursor would run smoothly without any pixel skipping. For example, if you set
+                        the cursor speed higher than normal (i.e. higher than 6/11 in Windows Settings or 50% in StarCraft)
+                        and move the mouse slowly you'll see that the cursor jumps over some pixels. Generally, it's a bad
+                        thing to have in the game.</p>
+                    <p class="flow-text">Unfortunately, LMO is an old 400 DPI mouse. It was fine to use it without any scaling on 640x480 or even
+                        800x600 resolution screens. Now it's not the case anymore when you would usually have a 24-inch 1920x1080
+                        monitor or even bigger. Without any scaling, the mouse cursor becomes painfully slow. This might
+                        be still acceptable for FPS games, but certainly not for RTS like StarCraft when you need to hit
+                        the opposite corners of the screen quickly. So software scaling for this mouse is a must, but how
+                        to scale things properly?</p>
+                    <h5>StarCraft: Remastered</h5>
+                    <p class="flow-text">In SC: R Blizzard added a very useful option just for that called <a href="https://www.reddit.com/r/starcraft/comments/6sbfb8/tabulated_equivalent_bw_119remastered_use_mouse/">Use Mouse Scaling</a>.
+                        According to the table below you must set the in-game sensitivity to 50% (no initial scaling) and
+                        turn on this checkbox.</p>
+                    <table class="bordered responsive-table">
+                        <thead>
+                            <tr>
+                                <th align="left">Vertical Resolution</th>
+                                <th align="left">480p</th>
+                                <th align="left">600p</th>
+                                <th align="left">720p</th>
+                                <th align="left">840p</th>
+                                <th align="left">960p</th>
+                                <th align="left">1080p</th>
+                                <th align="left">1200p</th>
+                                <th align="left">1320p</th>
+                                <th align="left">1440p</th>
+                                <th align="left">1560p</th>
+                                <th align="left">1680p</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left">Sensitivity Slider</td>
+                                <td align="left">50%</td>
+                                <td align="left">55%</td>
+                                <td align="left">60%</td>
+                                <td align="left">65%</td>
+                                <td align="left">70%</td>
+                                <td align="left">75%</td>
+                                <td align="left">80%</td>
+                                <td align="left">85%</td>
+                                <td align="left">90%</td>
+                                <td align="left">95%</td>
+                                <td align="left">100%</td>
+                            </tr>
+                            <tr>
+                                <td align="left">Applied Multiplier</td>
+                                <td align="left">1x</td>
+                                <td align="left">1.25x</td>
+                                <td align="left">1.5x</td>
+                                <td align="left">1.75x</td>
+                                <td align="left">2x</td>
+                                <td align="left">2.25x</td>
+                                <td align="left">2.5x</td>
+                                <td align="left">2.75x</td>
+                                <td align="left">3x</td>
+                                <td align="left">3.25x</td>
+                                <td align="left">3.5x</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="flow-text">Let me explain why it just works. Assuming you have a 1080p resolution. This setting would automatically
+                        set your sensitivity to 75% behind the scenes so it would feel like having 50% (no scaling) on an
+                        480p screen.</p>
+                    <div class="center">
+                        <img class="materialboxed" data-caption="Use Mouse Scaling Setting in Starcraft: Remastered" src="images/use-mouse-scaling.jpg">
+                    </div>
+                    <p class="flow-text">The LMO was designed for 480p screen, so "Use Mouse Scaling" would give you (almost) the same in-game
+                        experience while playing on a bigger screen. In other words, it would automatically scale mouse sensitivity
+                        to the appropriate value to "fake" the 640x480 screen experience. I believe this setting was introduced
+                        for compatibility with the original Brood War resolution.</p>
+                    <p class="flow-text">This also means that mouse scaling setting would work well ONLY with low DPI mice. Any modern 1000+ DPI
+                        mice would feel insanely fast with this option turned on. With modern sensors, you don't need any
+                        software scaling at all.</p>
+                    <h5>Windows</h5>
+                    <p class="flow-text">The above-mentioned approach only works in StarCraft: Remastered. When you leave the game, your mouse
+                        reverts to the slow motion again. Isn't that annoying? Do wish you had the same scaling checkbox
+                        for windows sensitivity? The conversion table helps here as well.</p>
+                    <p class="flow-text">According to the table, you should set the sensitivity to 75% for 1920x1080 screen, 80% for a 1200p screen,
+                        etc. Let's just open the Mouse Settings in Control Panel and set it just like that.</p>
+                    <div class="center">
+                        <img class="materialboxed" data-caption="Windows Mouse Settings" src="images/windows-mouse-settings.jpg">
+                    </div>
+                    <p class="flow-text">I was actually surprised that it would not allow you to configure things as you might want to. For example,
+                        there was no 75% option. It would get you either 70% (8/11) or 80% (9/11). Fortunately, the Windows
+                        API itself provides you with more options. You can set mouse sensitivity values from 1 to 20 with
+                        increments of 1 where 10/20 means no scaling or 50%. That's good news! If WinAPI has it I could write
+                        a software to adjust those settings myself.</p>
+                    <div class="center">
+                        <img class="materialboxed" data-caption="Extended Mouse Settings" src="images/extended-mouse-settings.jpg">
+                    </div>
+                    <p class="flow-text">So I did just that.</p>
+                    <p class="flow-text">
+                        <a href="https://www.dropbox.com/s/rn8t61kzxlozbmv/ExtendedMouseSettings.zip?dl=0">Download Extended Mouse Settings App</a>
+                        <br>
+                        <a href="https://github.com/PShchegolevatykh/extended-mouse-settings">Source code</a>
+                    </p>
+                    <p class="flow-text">Windows will most likely prevent you from running the app. It is not a virus. It needs admin rights
+                        to be able to write to Windows Registry. It's not enough to just set the value through Windows API.
+                        It's a three-step process. First, you set the sensitivity value you need, then you must save it to
+                        the registry for the current user so it won't be reverted when Windows checks the registry value
+                        again. If you don't want a sluggish experience on the Login screen you should apply the setting to
+                        all users (also through Windows Registry). That's the third step.</p>
+                    <h5>Starcraft II</h5>
+                    <p class="flow-text">This is very simple. You just set the in-game sensitivity to whatever value you need according to the
+                        table (e.g. 75% for 1080p). It's easy and flexible already.</p>
+                    <h5>Bonus 1: Set the "perfect" DPI for modern mouse</h5>
+                    <p class="flow-text">You can estimate the DPI you need to set on any modern mouse for your screen resolution. First, let's
+                        assume that 400 DPI is a perfect setting for 640x480 screen. Then for a higher resolution, you compute
+                        a multiplier. For example, if you have 1280x1024 you compute it like so 1280 / 640 = 2. Then you
+                        adjust the DPI accordingly: 400 x 2 = 800 DPI. For 1920x1080 it would be 400 x (1920 / 640) = 1200
+                        DPI. Doing such adjustments, the experience would be the same regardless of the new screen size.
+                        Pretty simple. You can also set 800x600 at 400 DPI as your starting point and redo the math. This
+                        is not a rough science. Feel free to adjust for yourself. I found it more comfortable to play on ~1000 DPI having
+                        a 1080p screen.</p>
+                    <h5>Bonus 2: I can't get an LMO mouse anywhere</h5>
+                    <p class="flow-text">You might consider some alternatives. For example, there's a <a href="http://www.commatech.cn/a/chanpinzhongxin/GamingMouse/2016/0517/48.html">Commatech Fkmini v3</a>                        mouse that has the same LMO shape with modern Avago 3090 sensor. I just ordered one from <a href="https://www.taobao.com/">Taobao</a>                        and waiting for it to come. Let me know if anyone needs a review of it later. There's also a <a href="https://www.amazon.co.uk/Zowie-MICO-Mouse-Mac-2-ways/dp/B00518C8CY">ZOWIE Mico</a>                        and <a href="http://item2.gmarket.co.kr/English/detailview/item.aspx?goodscode=957396416">SkyDigital NKEY G007</a>.
+                        Both have a very close shape. ZOWIE Mico is almost impossible to get anywhere just like the LMO.</p>
+                    <p class="flow-text">The most important thing is always your own comfort. If you like the mouse then stick with it.
+                        Have fun in the game!</p>
+                    <div class="right social-share">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.pshchegolevatykh.com/posts/2017/09/16/lmo-config-starcraft/"
+                            onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/intent/tweet?text=http://www.pshchegolevatykh.com/posts/2017/09/16/lmo-config-starcraft/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
+                        <a href="https://vk.com/share.php?url=http://www.pshchegolevatykh.com/posts/2017/09/16/lmo-config-starcraft/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-vk"></i></a>
+                        <a href="https://www.linkedin.com/shareArticle?url=http://www.pshchegolevatykh.com/posts/2017/09/16/lmo-config-starcraft/"
+                            onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="disqus_thread" class="comments-section"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    <footer>
+        <div class="footer-copyright">
+            <div class="container">
+                <!-- footer text -->
+            </div>
+        </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://use.fontawesome.com/061481d937.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) { document.write('<script src="../../../../../js/jquery-2.1.1.min.js"><\/script>'); }
+    </script>
+    <script type="text/javascript" src="../../../../../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../../../../../js/site.js"></script>
+    <script type="text/javascript" src="../../../../../js/prism.js"></script>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "http://www.pshchegolevatykh.com/posts/2017/09/16/lmo-config-starcraft/"; // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = "posts/2017/09/16/lmo-config-starcraft/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+            s.src = '//pshchegolevatykh.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <!--Google Analytics-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-86164699-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

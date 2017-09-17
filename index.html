@@ -1,467 +1,521 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection">
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-       <!--Favicon related-->
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
-        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-        <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
-        <meta name="application-name" content="Pavel Shchegolevatykh's Blog'"/>
-        <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
-        <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-        <!--SEO-->
-        <meta name="description" content="Pavel Shchegolevatykh is a software developer, who used to be in eSports. Writes about programming, lifestyle, gaming, hobbies and other topics.">
-	    <meta name="author" content="Pavel Shchegolevatykh">
-        <title>Pavel Shchegolevatykh - Programming, Lifestyle, Gaming, Hobbies, Random Thoughts</title>
-    </head>
 
-    <body>
-        <nav class="white" role="navigation">
-            <div class="nav-wrapper container">
-                <a href="#" data-activates="nav-mobile" class="button-collapse">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Favicon related-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Pavel Shchegolevatykh's Blog'" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <!--SEO-->
+    <meta name="description" content="Pavel Shchegolevatykh is a software developer, who used to be in eSports. Writes about programming, lifestyle, gaming, hobbies and other topics.">
+    <meta name="author" content="Pavel Shchegolevatykh">
+    <title>Pavel Shchegolevatykh - Programming, Lifestyle, Gaming, Hobbies, Random Thoughts</title>
+</head>
+
+<body>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
                     <i class="material-icons">menu</i>
                 </a>
-                <ul class="left hide-on-med-and-down">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about/">About</a>
-                    </li>
-                </ul>
-                <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about/">About</a>
-                    </li>
-                </ul>
-               
-            </div>
-        </nav>
-        <div class="container blog">
-            <div class="row">
-                 <div class="col s12 m6 l4">
-                      <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2017/06/04/starcraft2-basics/">
-                                <img src="posts/2017/06/04/starcraft2-basics/images/warcraft-starcraft.jpg">
-                                <span class="card-title">Starcraft 2 basics for Warcraft III players</span>
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container blog">
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2017/09/16/lmo-config-starcraft/">
+                                <img src="posts/2017/09/16/lmo-config-starcraft/images/lmo.jpg">
+                                <span class="card-title">Optimizing Logitech Mini Optical mouse for SC: R and StarCraft II</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
-                                        By Pavel Shchegolevatykh / June 4, 2017
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
+                                        By Pavel Shchegolevatykh / September 16, 2017
                                     </span>
-                                </div>
-                            <p>They start laddering, they micro the shit out of their 50-food limit army and get pissed off losing every single game to a complete noob. They also don't understand why they occasionally might win.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2017/06/04/starcraft2-basics/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2017/06/04/starcraft2-basics/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2017/06/04/starcraft2-basics/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>Logitech Mouse Optical (M-UV55A) is my current mouse of choice. I have small hands, and it has a
+                            perfect shape for my fingertip grip. What works for me might not work for others though. Be careful.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2017/09/16/lmo-config-starcraft/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2017/09/16/lmo-config-starcraft/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2017/09/16/lmo-config-starcraft/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
-                 </div>
-                <div class="col s12 m6 l4">
-                      <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2017/03/06/facebook-birthdays/">
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2017/06/04/starcraft2-basics/">
+                                <img src="posts/2017/06/04/starcraft2-basics/images/warcraft-starcraft.jpg">
+                                <span class="card-title">StarCraft II basics for Warcraft III players</span>
+                            </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
+                                        By Pavel Shchegolevatykh / June 4, 2017
+                                    </span>
+                        </div>
+                        <p>They start laddering, they micro the shit out of their 50-food limit army and get pissed off losing
+                            every single game to a complete noob. They also don't understand why they occasionally might
+                            win.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2017/06/04/starcraft2-basics/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2017/06/04/starcraft2-basics/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2017/06/04/starcraft2-basics/">0<!-- Comment count interted here dynamically --></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2017/03/06/facebook-birthdays/">
                                 <img src="posts/2017/03/06/facebook-birthdays/images/child.jpg">
                                 <span class="card-title">It's someone's birthday somewhere</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / March 6, 2017
                                     </span>
-                                </div>
-                            <p>Is it okay to ignore your Facebook friends' birthday notifications or not? That's the question that was bothering me ever since the social networks became a real thing.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2017/03/06/facebook-birthdays/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2017/03/06/facebook-birthdays/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2017/03/06/facebook-birthdays/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>Is it okay to ignore your Facebook friends' birthday notifications or not? That's the question that
+                            was bothering me ever since the social networks became a real thing.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2017/03/06/facebook-birthdays/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2017/03/06/facebook-birthdays/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2017/03/06/facebook-birthdays/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
-                 </div>
-                 <div class="col s12 m6 l4">
-                      <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2015/07/04/succulent-tips/">
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2015/07/04/succulent-tips/">
                                 <img src="posts/2015/07/04/succulent-tips/images/cacti-succs.jpg">
                                 <span class="card-title">Growing healthy cacti and succulents indoors</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / July 4, 2015
                                     </span>
-                                </div>
-                            <p>This year I added cacti and succulents to my hobbies list. They reduce my stress and I really looking at them. I'm a perfectionist and like to do everything properly, especially when it comes to the living things like plants.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2015/07/04/succulent-tips/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2015/07/04/succulent-tips/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2015/07/04/succulent-tips/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>This year I added cacti and succulents to my hobbies list. They reduce my stress and I really looking
+                            at them. I'm a perfectionist and like to do everything properly, especially when it comes to
+                            the living things like plants.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2015/07/04/succulent-tips/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2015/07/04/succulent-tips/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2015/07/04/succulent-tips/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
-                 </div>
-                <div class="col s12 m6 l4">
-                     <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2014/05/17/favorite-old-games/">
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2014/05/17/favorite-old-games/">
                                 <img src="posts/2014/05/17/favorite-old-games/images/ibm-pc.jpg">
                                 <span class="card-title">My favorite old PC games</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / May 17, 2014
                                     </span>
-                                </div>
-                            <p>I still have nothing useful to share with you guys, but I have some free time now, so I'd like to tell you about some things from the past.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2014/05/17/favorite-old-games/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2014/05/17/favorite-old-games/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2014/05/17/favorite-old-games/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>I still have nothing useful to share with you guys, but I have some free time now, so I'd like to
+                            tell you about some things from the past.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2014/05/17/favorite-old-games/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2014/05/17/favorite-old-games/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2014/05/17/favorite-old-games/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                 <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/08/19/common-oracle-issues/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/08/19/common-oracle-issues/">
                                 <img src="posts/2013/08/19/common-oracle-issues/images/oracle.png">
                                 <span class="card-title">Common issues with Oracle XE database</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / August 19, 2013
                                     </span>
-                                </div>
-                            <p>Working with Oracle XE as a beginner I faced with many issues that took me hours or even days to fix. Here I'd like to mention two of them: ORA-12705 and ORA-12514.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/08/19/common-oracle-issues/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/08/19/common-oracle-issues/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/08/19/common-oracle-issues/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>Working with Oracle XE as a beginner I faced with many issues that took me hours or even days to
+                            fix. Here I'd like to mention two of them: ORA-12705 and ORA-12514.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/08/19/common-oracle-issues/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/08/19/common-oracle-issues/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/08/19/common-oracle-issues/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/07/09/configuring-jenkins-for-cloudbees/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/07/09/configuring-jenkins-for-cloudbees/">
                                 <img src="posts/2013/07/09/configuring-jenkins-for-cloudbees/images/jenkins.jpg">
                                 <span class="card-title">Configuring Jenkins for CloudBees</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / July 9, 2013
                                     </span>
-                                </div>
-                            <p>During my Java Internship program at my new job we had to develop an enterprise-like project to learn some new things and development processes. Continious integration was a big part of it.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/07/09/configuring-jenkins-for-cloudbees/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/07/09/configuring-jenkins-for-cloudbees/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/07/09/configuring-jenkins-for-cloudbees/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>During my Java Internship program at my new job we had to develop an enterprise-like project to learn
+                            some new things and development processes. Continious integration was a big part of it.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/07/09/configuring-jenkins-for-cloudbees/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/07/09/configuring-jenkins-for-cloudbees/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/07/09/configuring-jenkins-for-cloudbees/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                 <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/06/23/hobbies-for-programmers/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/06/23/hobbies-for-programmers/">
                                 <img src="posts/2013/06/23/hobbies-for-programmers/images/bike.jpg">
                                 <span class="card-title">Why programmers should have a hobby</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / June 23, 2013
                                     </span>
-                                </div>
-                            <p>In this post  I will talk about such simple and important thing like a hobby in our developers' lives. It is a great feeling to get lost into something whether it is your favorite book or a video game.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/06/23/hobbies-for-programmers/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/06/23/hobbies-for-programmers/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/06/23/hobbies-for-programmers/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>In this post I will talk about such simple and important thing like a hobby in our developers' lives.
+                            It is a great feeling to get lost into something whether it is your favorite book or a video
+                            game.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/06/23/hobbies-for-programmers/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/06/23/hobbies-for-programmers/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/06/23/hobbies-for-programmers/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/04/20/cracking-rsa/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/04/20/cracking-rsa/">
                                 <img src="posts/2013/04/20/cracking-rsa/images/machine.jpg">
                                 <span class="card-title">Cracking short RSA keys</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / April 20, 2013
                                     </span>
-                                </div>
-                            <p>A few days ago I had an interesting home assignment at my university related to this topic.  So I thought I could write a piece of software that's easy to use and share the code with you.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/04/20/cracking-rsa/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/04/20/cracking-rsa/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/04/20/cracking-rsa/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>A few days ago I had an interesting home assignment at my university related to this topic. So I
+                            thought I could write a piece of software that's easy to use and share the code with you.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/04/20/cracking-rsa/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/04/20/cracking-rsa/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/04/20/cracking-rsa/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/03/24/burglar-alarm/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/03/24/burglar-alarm/">
                                 <img src="posts/2013/03/24/burglar-alarm/images/mission-impossible.jpg">
                                 <span class="card-title">Burglar alarm with Netduino Plus</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / March 24, 2013
                                     </span>
-                                </div>
-                            <p>IoT is becoming more popular these days. There are plenty of powerful microcontrollers on the market that don't require you to be C, ASM or Electronics guru to make some pretty cool stuff. You can create Embedded Systems even in .NET.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/03/24/burglar-alarm/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/03/24/burglar-alarm/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/03/24/burglar-alarm/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>IoT is becoming more popular these days. There are plenty of powerful microcontrollers on the market
+                            that don't require you to be C, ASM or Electronics guru to make some pretty cool stuff. You can
+                            create Embedded Systems even in .NET.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/03/24/burglar-alarm/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/03/24/burglar-alarm/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/03/24/burglar-alarm/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/02/16/starting-with-oracle-xe/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/02/16/starting-with-oracle-xe/">
                                 <img src="posts/2013/02/16/starting-with-oracle-xe/images/database.jpg">
                                 <span class="card-title">Getting started with Oracle XE in .NET</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / February 16, 2013
                                     </span>
-                                </div>
-                            <p>Quite often I had to work with database providers other than Microsoft SQL Server. Sometimes it could be tricky. Here I will show you some basic steps to start your development in .NET using Oracle Database XE as your data storage.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/02/16/starting-with-oracle-xe/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/02/16/starting-with-oracle-xe/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/02/16/starting-with-oracle-xe/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>Quite often I had to work with database providers other than Microsoft SQL Server. Sometimes it could
+                            be tricky. Here I will show you some basic steps to start your development in .NET using Oracle
+                            Database XE as your data storage.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/02/16/starting-with-oracle-xe/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/02/16/starting-with-oracle-xe/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/02/16/starting-with-oracle-xe/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/01/30/pppoe-automation/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/01/30/pppoe-automation/">
                                 <img src="posts/2013/01/30/pppoe-automation/images/gears.jpg">
                                 <span class="card-title">PPPoE automation</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / January 30, 2013
                                     </span>
-                                </div>
-                            <p>In my <a href="posts/2013/01/29/connecting-via-pppoe/">previous</a> post I showed how to open PPPoE connection automatically at Windows startup. However there were still some issues. One of them is to find a way to keep this connection alive.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/01/30/pppoe-automation/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/01/30/pppoe-automation/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/01/30/pppoe-automation/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>In my <a href="posts/2013/01/29/connecting-via-pppoe/">previous</a> post I showed how to open PPPoE
+                            connection automatically at Windows startup. However there were still some issues. One of them
+                            is to find a way to keep this connection alive.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/01/30/pppoe-automation/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/01/30/pppoe-automation/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/01/30/pppoe-automation/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/01/29/connecting-via-pppoe/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/01/29/connecting-via-pppoe/">
                                 <img src="posts/2013/01/29/connecting-via-pppoe/images/unable-to-connect.jpg">
                                 <span class="card-title">Connecting to Internet at startup via PPPoE</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / January 29, 2013
                                     </span>
-                                </div>
-                            <p>Today my non-technical neighbor asked me to reconfigure her Internet connection. She used PPPoE because her ISP Rostelecom had told her that switching to PPPoE would solve all of her connection problems.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/01/29/connecting-via-pppoe/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/01/29/connecting-via-pppoe/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/01/29/connecting-via-pppoe/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>Today my non-technical neighbor asked me to reconfigure her Internet connection. She used PPPoE because
+                            her ISP Rostelecom had told her that switching to PPPoE would solve all of her connection problems.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/01/29/connecting-via-pppoe/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/01/29/connecting-via-pppoe/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="posts/2013/01/29/connecting-via-pppoe/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/01/22/disable-windows-key/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/01/22/disable-windows-key/">
                                 <img src="posts/2013/01/22/disable-windows-key/images/windows-key-keyboard.jpg">
                                 <span class="card-title">Disable Windows Key on gaming PC</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / January 22, 2013
                                     </span>
-                                </div>
-                            <p>I was looking at my desktop while my army was dying from the night elf forces without my help. It took some time for me to switch back to the game, but in Warcraft III each second matters.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/01/22/disable-windows-key/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/01/22/disable-windows-key/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="/posts/2013/01/22/disable-windows-key/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>I was looking at my desktop while my army was dying from the night elf forces without my help. It
+                            took some time for me to switch back to the game, but in Warcraft III each second matters.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/01/22/disable-windows-key/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/01/22/disable-windows-key/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="/posts/2013/01/22/disable-windows-key/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable large blog-column-container">
-                        <div class="card-image">
-                            <a href="posts/2013/01/15/disable-windows-update-restart/">
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable large blog-column-container">
+                    <div class="card-image">
+                        <a href="posts/2013/01/15/disable-windows-update-restart/">
                                 <img src="posts/2013/01/15/disable-windows-update-restart/images/restart-window.png">
                                 <span class="card-title">Disable Windows Update restart</span>
                             </a>
-                        </div>
-                        <div class="card-content">
-                                <div class="card-subtitle">
-                                    <span class="grey-text text-darken-1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-subtitle">
+                            <span class="grey-text text-darken-1">
                                         By Pavel Shchegolevatykh / January 15, 2013
                                     </span>
-                                </div>
-                            <p>You're working with some documents, watching movie, listen to music on a background, playing StarCraft II or just left your computer on while you sleep to download some stuff (leagally of course) and BAM! Hello Windows Update.</p>
                         </div>
-                        <div class="card-action">
-                            <div class="col s6">
-                                <a href="posts/2013/01/15/disable-windows-update-restart/">Read more</a>
-                            </div>
-                            <div class="col s6 right-align card-social-share">
-                                <a href="posts/2013/01/15/disable-windows-update-restart/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="/posts/2013/01/15/disable-windows-update-restart/">0<!-- Comment count interted here dynamically --></span></a>
-                            </div>
+                        <p>You're working with some documents, watching movie, listen to music on a background, playing StarCraft
+                            II or just left your computer on while you sleep to download some stuff (leagally of course)
+                            and BAM! Hello Windows Update.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="col s6">
+                            <a href="posts/2013/01/15/disable-windows-update-restart/">Read more</a>
+                        </div>
+                        <div class="col s6 right-align card-social-share">
+                            <a href="posts/2013/01/15/disable-windows-update-restart/#disqus_thread"><i class="fa fa-comment-o"></i><span class="disqus-comment-count" data-disqus-identifier="/posts/2013/01/15/disable-windows-update-restart/">0<!-- Comment count interted here dynamically --></span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-                                    
+    </div>
 
-        <footer>
-            <div class="footer-copyright">
-                <div class="container">
-                   <!-- footer text -->
-                </div>
+
+    <footer>
+        <div class="footer-copyright">
+            <div class="container">
+                <!-- footer text -->
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        
-        <!--Import jQuery before materialize.js-->
-        <script id="dsq-count-scr" src="//pshchegolevatykh.disqus.com/count.js" async></script>
-        <script type="text/javascript" src="https://use.fontawesome.com/061481d937.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>if (!window.jQuery) { document.write('<script src="js/jquery-2.1.1.min.js"><\/script>'); }</script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/site.js"></script>
-        <!--Google Analytics-->
-        <script>
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-86164699-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-    </body>
+    <!--Import jQuery before materialize.js-->
+    <script id="dsq-count-scr" src="//pshchegolevatykh.disqus.com/count.js" async></script>
+    <script type="text/javascript" src="https://use.fontawesome.com/061481d937.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) { document.write('<script src="js/jquery-2.1.1.min.js"><\/script>'); }
+    </script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+    <!--Google Analytics-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-86164699-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
 </html>
