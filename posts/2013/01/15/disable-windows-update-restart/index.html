@@ -76,38 +76,38 @@
                                     
                             </div>
                             <h4>How to disable Windows Update restart</h4>
-                            <p class="flow-text">Many of us were victims of automatic Windows Update restart. Imagine that you are working with some documents, watching movie, listening to music, or playing video game and BAM! This deadly Windows Update restart popup shows up looking like a detonator. Sometimes there's nothing you can do.</p>
+                            <p>Many of us were victims of automatic Windows Update restart. Imagine that you are working with some documents, watching movie, listening to music, or playing video game and BAM! This deadly Windows Update restart popup shows up looking like a detonator. Sometimes there's nothing you can do.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows update restart window" src="images/restart-window.png">
+                                <img data-caption="Windows update restart window" src="images/restart-window.png">
                             </div>
-                            <p class="flow-text">Sometimes you leave your PC on to download some stuff not being aware that this shit happens. You come back and see your desktop. You slowly realize that it's all gone.</p>
-                            <p class="flow-text">Back in the day in Windows 7 there was an option to postpone the update for the infinite time. Well if you're lucky to get there in time in the first place.</p>
+                            <p>Sometimes you leave your PC on to download some stuff not being aware that this shit happens. You come back and see your desktop. You slowly realize that it's all gone.</p>
+                            <p>Back in the day in Windows 7 there was an option to postpone the update for the infinite time. Well if you're lucky to get there in time in the first place.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Postpone windows 7 update" src="images/win7-delay.png">
+                                <img data-caption="Postpone windows 7 update" src="images/win7-delay.png">
                             </div>
-                            <p class="flow-text">As far as I know in Windows 8 Microsoft changed their update policy.</p>
-                            <p class="flow-text">* From now on all updates that require PC reboot will be installed one a month. Not bad huh?<br />* They added small notification to the login screen about upcoming PC restart that shows up 3 days before the update day. It's just white noise for guys like me.<br />* Power Option menu itms were changed to "Update and restart" and "Update and shut down" respectively. Am I the only one who just push shut down button instead of using this menu? No updates will be installed in that case.</p>
+                            <p>As far as I know in Windows 8 Microsoft changed their update policy.</p>
+                            <p>* From now on all updates that require PC reboot will be installed one a month. Not bad huh?<br />* They added small notification to the login screen about upcoming PC restart that shows up 3 days before the update day. It's just white noise for guys like me.<br />* Power Option menu itms were changed to "Update and restart" and "Update and shut down" respectively. Am I the only one who just push shut down button instead of using this menu? No updates will be installed in that case.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Windows 7 power options" src="images/power-menu-options.png">
+                                <img data-caption="Windows 7 power options" src="images/power-menu-options.png">
                             </div>
-                            <p class="flow-text">I wish Microsoft would change their update policy once more. Right now they are doing it wrong. I just want my PC to update automatically before it starts up. They could do it as a background update like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon changes and that's it! You decide if you want to update or not in YOUR own time.</p>
-                            <p class="flow-text">But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit in a "geeky" way. Your grandma could not do it, but hopefully you can.</p>
+                            <p>I wish Microsoft would change their update policy once more. Right now they are doing it wrong. I just want my PC to update automatically before it starts up. They could do it as a background update like Google Chrome does. Even Apple IPhone updates feel more user-friendly. There's like four updates a year at max, and there are some cool new features that come with them. They are not automatic but they are not screaming to the user. They are non-distracting. The Settings icon changes and that's it! You decide if you want to update or not in YOUR own time.</p>
+                            <p>But don't panic. There is a solution which does not involve disabling the Windows Updates alltogether. Group Policies come to resque! Yes, this is Microsoft way of doing things. You have to be PC "guru" to make things work. Even with Windows 8 release nothing's changed like they promised. You still have to do lots of shit in a "geeky" way. Your grandma could not do it, but hopefully you can.</p>
                             <h5>Step 1 - Open Group Policy Editor</h5>
-                            <p class="flow-text">To run the editor press <strong>Windows + R</strong> and type <strong>gpedit.msc</strong>.</p>
+                            <p>To run the editor press <strong>Windows + R</strong> and type <strong>gpedit.msc</strong>.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit.png">
+                                <img data-caption="Group Policy Editor" src="images/gpedit.png">
                             </div>
                             <h5>Step 2 - Find No Auto-restart Policy</h5>
-                            <p class="flow-text">Navigate to the following path. <strong>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</strong>. There should be <strong>No auto-restart with logged on users for scheduled automatic updates installations</strong> policy listed on the right side.</p>
+                            <p>Navigate to the following path. <strong>Local Computer Policy -> Computer Configuration -> Administrative Templates - > Windows Components -> Windows Update</strong>. There should be <strong>No auto-restart with logged on users for scheduled automatic updates installations</strong> policy listed on the right side.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Group Policy Editor" src="images/gpedit2.png">
+                                <img data-caption="Group Policy Editor" src="images/gpedit2.png">
                             </div>
                             <h5>Step 3 - Enable the Policy and Save Changes</h5>
-                            <p class="flow-text">Double click on that policy. You'll see policy editor window. Set <strong>Enabled</strong> option. You can also leave a comment if you want to. Then press <strong>Apply</strong> and <strong>OK</strong> buttons.</p>
+                            <p>Double click on that policy. You'll see policy editor window. Set <strong>Enabled</strong> option. You can also leave a comment if you want to. Then press <strong>Apply</strong> and <strong>OK</strong> buttons.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Restart policy editor window" src="images/gpedit3.png">
+                                <img data-caption="Restart policy editor window" src="images/gpedit3.png">
                             </div>
-                            <p class="flow-text">That's all you need. Hope it was useful.</p>
+                            <p>That's all you need. Hope it was useful.</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.pshchegolevatykh.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/intent/tweet?text=http://www.pshchegolevatykh.com/posts/2013/01/15/disable-windows-update-restart/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>

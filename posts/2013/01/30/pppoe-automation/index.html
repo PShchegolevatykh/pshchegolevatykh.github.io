@@ -76,36 +76,36 @@
                                     
                             </div>
                             <h4>PPPoE automation</h4>
-                            <p class="flow-text">In my <a href="../../../../../posts/2013/01/29/connecting-via-pppoe/">previous</a> post I showed how to open PPPoE connection automatically at Windows startup. However there were still some issues. One of them is to find a way to keep this connection alive. After doing some research I came up with two ideas.</p>
+                            <p>In my <a href="../../../../../posts/2013/01/29/connecting-via-pppoe/">previous</a> post I showed how to open PPPoE connection automatically at Windows startup. However there were still some issues. One of them is to find a way to keep this connection alive. After doing some research I came up with two ideas.</p>
                             <h5>Method 1 - Scheduled task</h5>
-                            <p class="flow-text">1. Open Task Scheduler window from the control panel or type <strong>taskschd.msc</strong> in <strong>Run</strong> Menu and create a new task.</p>
+                            <p>1. Open Task Scheduler window from the control panel or type <strong>taskschd.msc</strong> in <strong>Run</strong> Menu and create a new task.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Create task window" src="images/createtask.png">
+                                <img data-caption="Create task window" src="images/createtask.png">
                             </div>
-                            <p class="flow-text">2. On <strong>General</strong> tab specify <strong>Name</strong> and <strong>Description</strong>. Also chose <strong>Run whether user is logged on or not</strong> option in order to run task in background.</p>
+                            <p>2. On <strong>General</strong> tab specify <strong>Name</strong> and <strong>Description</strong>. Also chose <strong>Run whether user is logged on or not</strong> option in order to run task in background.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Create task window" src="images/crtask.png">
+                                <img data-caption="Create task window" src="images/crtask.png">
                             </div>
-                            <p class="flow-text">3. On <strong>Triggers</strong> tab add a new trigger. Set <strong>Daily</strong> option and Repeat task every <strong>5 minutes</strong> for a duration of <strong>Indefinitely</strong>.</p>
+                            <p>3. On <strong>Triggers</strong> tab add a new trigger. Set <strong>Daily</strong> option and Repeat task every <strong>5 minutes</strong> for a duration of <strong>Indefinitely</strong>.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Triggers window" src="images/triggers.png">
+                                <img data-caption="Triggers window" src="images/triggers.png">
                             </div>
-                            <p class="flow-text">4. On <strong>Actions</strong> tab add a new action. In <strong>Program/script</strong> text field type <strong>rasdial</strong>. In arguments specify your credentials: connection name, username and password separated by spaces. After that click <strong>OK</strong> in all windows.</p>
+                            <p>4. On <strong>Actions</strong> tab add a new action. In <strong>Program/script</strong> text field type <strong>rasdial</strong>. In arguments specify your credentials: connection name, username and password separated by spaces. After that click <strong>OK</strong> in all windows.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="New action window" src="images/newaction.png">
+                                <img data-caption="New action window" src="images/newaction.png">
                             </div>
-                            <p class="flow-text">Then <strong>Task Scheduler</strong> asks you to provide your PC user credentials in order to continue. Please do that and we are all done with task creation.</p>
+                            <p>Then <strong>Task Scheduler</strong> asks you to provide your PC user credentials in order to continue. Please do that and we are all done with task creation.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="PC credentials window" src="images/credentials.png">
+                                <img data-caption="PC credentials window" src="images/credentials.png">
                             </div>
-                            <p class="flow-text">You can test it by running manually or just wait for five minutes to see if it works. One obvious drawback is that we can only specify no less than five minutes timeout to reconnect. Maybe for some reason you need less than that. A good thing that user doesn't feel anything - no frightening command prompt or other dialogs. It works just like any other background process.</p>
+                            <p>You can test it by running manually or just wait for five minutes to see if it works. One obvious drawback is that we can only specify no less than five minutes timeout to reconnect. Maybe for some reason you need less than that. A good thing that user doesn't feel anything - no frightening command prompt or other dialogs. It works just like any other background process.</p>
                             <h5>Method 2 - Custom Windows Service</h5>
-                            <p class="flow-text">As I said before for some reason you might need polling interval to be less than five minutes. For this purpose I implemented a Windows Service application that is fully configurable. You can set polling timeout and your connection details. It uses <strong>rasdial</strong> process internally. Works seemlessly. No annoying popups. Internal timer triggers polling for specified connection. <strong>If are to change something in xml config file you should restart the service.</strong> This file is located in the service application folder (<strong>Program Files</strong> by default). After the installation in order to run the service you can either restart your PC or run it manually using windows <strong>Services</strong> manager (<strong>services.msc</strong> using <strong>Run</strong> command).</p>
+                            <p>As I said before for some reason you might need polling interval to be less than five minutes. For this purpose I implemented a Windows Service application that is fully configurable. You can set polling timeout and your connection details. It uses <strong>rasdial</strong> process internally. Works seemlessly. No annoying popups. Internal timer triggers polling for specified connection. <strong>If are to change something in xml config file you should restart the service.</strong> This file is located in the service application folder (<strong>Program Files</strong> by default). After the installation in order to run the service you can either restart your PC or run it manually using windows <strong>Services</strong> manager (<strong>services.msc</strong> using <strong>Run</strong> command).</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Services window" src="images/service.png">
+                                <img data-caption="Services window" src="images/service.png">
                             </div>
-                            <p class="flow-text"><a href="https://www.dropbox.com/s/ezrcdrq404q4zss/PppoeConnectionDialerSetup.msi">Download PPPoE dialer service installer</a><br /><a href="https://github.com/PShchegolevatykh/pppoe-dialer">Source code</a></p>
-                            <p class="flow-text">If you found this useful feel free to thank me in comments or share this post with others.</p>
+                            <p><a href="https://www.dropbox.com/s/ezrcdrq404q4zss/PppoeConnectionDialerSetup.msi">Download PPPoE dialer service installer</a><br /><a href="https://github.com/PShchegolevatykh/pppoe-dialer">Source code</a></p>
+                            <p>If you found this useful feel free to thank me in comments or share this post with others.</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.pshchegolevatykh.com/posts/2013/01/30/pppoe-automation/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/intent/tweet?text=http://www.pshchegolevatykh.com/posts/2013/01/30/pppoe-automation/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>

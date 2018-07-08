@@ -76,10 +76,10 @@
                                     
                             </div>
                             <h4>Cracking short RSA keys</h4>
-                            <p class="flow-text">A few days ago I had an interesting home assignment at my university related to this topic.  So I thought I could write a piece of software that's easy to use and share the code with you. You can read more about RSA on <a href="https://en.wikipedia.org/wiki/RSA_(algorithm)">wikipedia</a>.</p>
-                            <p class="flow-text">By definition in every RSA cryptosystem you have two things: public key (denoted as <strong>n</strong> and <strong>e</strong> pair) and a cipher (denoted as <strong>C</strong>). The algorithm states that you cannot easily determine private key (denoted as <strong>d</strong>), which is required for decryption, knowing only above mentioned values (<strong>n, e, C</strong>).</p>
-                            <p class="flow-text">They got it right, but this rule works only for very large numbers used as keys (more than 1024 bit). If you have small values for <strong>n</strong> and <strong>e</strong>, then you can decrypt (or crack) the message. This could be done because <a href="https://en.wikipedia.org/wiki/Factorization">factorization</a> becomes possible for the small <strong>n</strong>. Actually for very small numbers you can do it automatically using one of the algorithms as I'll show here. For larger numbers there are many <strong>factorization databases</strong> you can find on the Internet.</p>
-                            <p class="flow-text">The first step you should do is to determine a pair of numbers (factors) <strong>p</strong> and <strong>q</strong> that were originally used from given <strong>n</strong>. There is an algorithm for doing so.</p>
+                            <p>A few days ago I had an interesting home assignment at my university related to this topic.  So I thought I could write a piece of software that's easy to use and share the code with you. You can read more about RSA on <a href="https://en.wikipedia.org/wiki/RSA_(algorithm)">wikipedia</a>.</p>
+                            <p>By definition in every RSA cryptosystem you have two things: public key (denoted as <strong>n</strong> and <strong>e</strong> pair) and a cipher (denoted as <strong>C</strong>). The algorithm states that you cannot easily determine private key (denoted as <strong>d</strong>), which is required for decryption, knowing only above mentioned values (<strong>n, e, C</strong>).</p>
+                            <p>They got it right, but this rule works only for very large numbers used as keys (more than 1024 bit). If you have small values for <strong>n</strong> and <strong>e</strong>, then you can decrypt (or crack) the message. This could be done because <a href="https://en.wikipedia.org/wiki/Factorization">factorization</a> becomes possible for the small <strong>n</strong>. Actually for very small numbers you can do it automatically using one of the algorithms as I'll show here. For larger numbers there are many <strong>factorization databases</strong> you can find on the Internet.</p>
+                            <p>The first step you should do is to determine a pair of numbers (factors) <strong>p</strong> and <strong>q</strong> that were originally used from given <strong>n</strong>. There is an algorithm for doing so.</p>
 <pre><code class="language-java">// code of this method was taken from this article:
 // http://programmingpraxis.files.wordpress.com/2012/09/primenumbers.pdf
 public List<BigInteger> factorize(BigInteger n)
@@ -112,9 +112,9 @@ public List<BigInteger> factorize(BigInteger n)
 
     return factorList;
 }</code></pre>
-                            <p class="flow-text">Then you need to decrypt the message with a private key <strong>d</strong>. You can get it from the equation <strong>(e*d) mod ((p-1)*(q-1)) = 1</strong>. Fortunately you do not have to solve it manually. It can be solved by your favorite programming language tools. For this assignment I chose Java so I could use <strong>e.modInverse((p-1)(q-1))</strong> method that is available for BigInteger numbers.</p>
+                            <p>Then you need to decrypt the message with a private key <strong>d</strong>. You can get it from the equation <strong>(e*d) mod ((p-1)*(q-1)) = 1</strong>. Fortunately you do not have to solve it manually. It can be solved by your favorite programming language tools. For this assignment I chose Java so I could use <strong>e.modInverse((p-1)(q-1))</strong> method that is available for BigInteger numbers.</p>
                             
-                            <p class="flow-text">I also wrapped all the things in a clean API to abstract things out for the clients that shouldn't dive deep into all these math formulas.</p>
+                            <p>I also wrapped all the things in a clean API to abstract things out for the clients that shouldn't dive deep into all these math formulas.</p>
 <pre><code class="language-java">public static void main(String[] args) {
     BigInteger e = BigInteger.valueOf(12371);
     BigInteger n = new BigInteger("517815623413379");
@@ -127,9 +127,9 @@ public List<BigInteger> factorize(BigInteger n)
         ex.printStackTrace();
     }
 }</code></pre>
-                            <p class="flow-text">Even if you know nothing about RSA internals you can use the API to crack things.</p>
-                            <p class="flow-text"><a href="https://github.com/PShchegolevatykh/rsa-cracker">Source Code</a></p>
-                            <p class="flow-text">Thanks for you time.</p>
+                            <p>Even if you know nothing about RSA internals you can use the API to crack things.</p>
+                            <p><a href="https://github.com/PShchegolevatykh/rsa-cracker">Source Code</a></p>
+                            <p>Thanks for you time.</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.pshchegolevatykh.com/posts/2013/04/20/cracking-rsa/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/intent/tweet?text=http://www.pshchegolevatykh.com/posts/2013/04/20/cracking-rsa/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>

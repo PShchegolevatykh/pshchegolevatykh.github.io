@@ -76,34 +76,34 @@
                                     
                             </div>
                             <h4>Common issues with Oracle XE database</h4>
-                            <p class="flow-text">Working with Oracle XE as a beginner I faced with many issues that took me hours or even days to fix. Here I'd like to mention two of them: <strong>ORA-12705</strong> and <strong>ORA-12514</strong>.</p>
+                            <p>Working with Oracle XE as a beginner I faced with many issues that took me hours or even days to fix. Here I'd like to mention two of them: <strong>ORA-12705</strong> and <strong>ORA-12514</strong>.</p>
                             <h5>Fixing ORA-12705</h5>
-                            <p class="flow-text">This issue relates to people who connects to the Oracle DB server from the the environment with different language settings. For in my case the server was located in Germany and I was connecting from the Russian PC. I found many answers on the Internet and most of them just didn't work. Some of them suggested configuring the server enviroment which I didn't have access to. But first things first.</p>
-                            <p class="flow-text">When I try to connect to Oracle Database via <strong>SQL Developer</strong> or plain JDBC I was getting an error:</p>
-                            <p class="flow-text"><strong>ORA-12705: Cannot access NLS data files or invalid environment specified.</strong></p>
-                            <p class="flow-text">Of course none of my German colleagues were having this issue. It was all fine for them, and because I was the only foreigner in the project I had to find a solution to this all by myself. Solving problems was my job after all.</p>
-                            <p class="flow-text">The most popular advice on the Web was to change the values for <strong>NLS_LANG</strong> subkey from Windows Registry or remove it completely (<strong>HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE</strong>). I tried both but it didn't work for some reason.</p>
-                            <p class="flow-text">What did work is to manually <strong>tell the JVM what region and language it should be using</strong>. For example to make the connection work in Oracle SQL Developer you should find the <strong>sqldeveloper.conf</strong> config file (under <strong>sqldeveloper\bin</strong> folder) then open it and add those two lines:</p>
+                            <p>This issue relates to people who connects to the Oracle DB server from the the environment with different language settings. For in my case the server was located in Germany and I was connecting from the Russian PC. I found many answers on the Internet and most of them just didn't work. Some of them suggested configuring the server enviroment which I didn't have access to. But first things first.</p>
+                            <p>When I try to connect to Oracle Database via <strong>SQL Developer</strong> or plain JDBC I was getting an error:</p>
+                            <p><strong>ORA-12705: Cannot access NLS data files or invalid environment specified.</strong></p>
+                            <p>Of course none of my German colleagues were having this issue. It was all fine for them, and because I was the only foreigner in the project I had to find a solution to this all by myself. Solving problems was my job after all.</p>
+                            <p>The most popular advice on the Web was to change the values for <strong>NLS_LANG</strong> subkey from Windows Registry or remove it completely (<strong>HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE</strong>). I tried both but it didn't work for some reason.</p>
+                            <p>What did work is to manually <strong>tell the JVM what region and language it should be using</strong>. For example to make the connection work in Oracle SQL Developer you should find the <strong>sqldeveloper.conf</strong> config file (under <strong>sqldeveloper\bin</strong> folder) then open it and add those two lines:</p>
 <pre><code class="language-markup">AddVMOption -Duser.language=en
 AddVMOption -Duser.region=us</code></pre>
-                            <p class="flow-text">If you use Eclipse IDE you should add those lines into the <strong>eclipse.ini</strong> config file (it can be found under the root eclipse folder):</p>
+                            <p>If you use Eclipse IDE you should add those lines into the <strong>eclipse.ini</strong> config file (it can be found under the root eclipse folder):</p>
 <pre><code class="language-markup">-Duser.language=en
 -Duser.country=US</code></pre>
-                            <p class="flow-text">Also you should supply those parameters to your JRE(JDK). To do this go to <strong>Window -> Preferences -> Java -> Installed JREs -> [Chose your JRE(JDK)] -> Edit</strong>. Near the <strong>Default VM Parameters</strong> enter this line:</p>
+                            <p>Also you should supply those parameters to your JRE(JDK). To do this go to <strong>Window -> Preferences -> Java -> Installed JREs -> [Chose your JRE(JDK)] -> Edit</strong>. Near the <strong>Default VM Parameters</strong> enter this line:</p>
 <pre><code class="language-markup">-Duser.language=en -Duser.region=US</code></pre>
-                            <p class="flow-text">This should solve your connection problems without any code changes. If none of this works you can always hardcode the language locally before making a DB connection through the code:</p>
+                            <p>This should solve your connection problems without any code changes. If none of this works you can always hardcode the language locally before making a DB connection through the code:</p>
 <pre><code class="language-java">Locale.setDefault(Locale.ENGLISH);</code></pre>
-                            <p class="flow-text">Do not commit this and use as a workaround. Hope you won't need this.</p>
+                            <p>Do not commit this and use as a workaround. Hope you won't need this.</p>
                             
                             <h5>Fixing ORA-12514</h5>
-                            <p class="flow-text">This is connected to making a database backup, which I had to do quite often as a part of my job. I was not a DBA or Oracle expert in any way. I thought this should be a pretty simple task. I was wrong. In Oracle we don't trust.</p>
-                            <p class="flow-text">So I was getting an <strong>ORA-12514</strong> error trying to make a database dump file (*.dmp) of the existing schema using the imp command via console:</p>
+                            <p>This is connected to making a database backup, which I had to do quite often as a part of my job. I was not a DBA or Oracle expert in any way. I thought this should be a pretty simple task. I was wrong. In Oracle we don't trust.</p>
+                            <p>So I was getting an <strong>ORA-12514</strong> error trying to make a database dump file (*.dmp) of the existing schema using the imp command via console:</p>
 <pre><code class="language-markup">imp pshchegolavatykh/mypassword@mydb file=C:\SomeFolder\DbDump\LatestDate.dmp full=y</code></pre>
-                            <p class="flow-text">Oh by the way if you don't specify the <strong>full=y</strong> flag you will get a message that <strong>import was successful</strong> but <strong>there would not be any real changes</strong>. WTF Oracle?</p>
-                            <p class="flow-text">Anyway it turned out that the system did not know about <strong>mydb</strong> identifier by default. You have to manually edit <strong>tsnames.ora</strong> file and map this id to the actual connection string. After you've done that you can use <strong>mydb</strong> as an alias.</p>
-                            <p class="flow-text">Usually <strong>tsnames.ora</strong> file is located under <strong>&lt;OracleInstallationFolder&gt;\NETWORK\ADMIN</strong> directory. If you forgot where the Oracle DB Instance is installed use Windows File Search.</p>
+                            <p>Oh by the way if you don't specify the <strong>full=y</strong> flag you will get a message that <strong>import was successful</strong> but <strong>there would not be any real changes</strong>. WTF Oracle?</p>
+                            <p>Anyway it turned out that the system did not know about <strong>mydb</strong> identifier by default. You have to manually edit <strong>tsnames.ora</strong> file and map this id to the actual connection string. After you've done that you can use <strong>mydb</strong> as an alias.</p>
+                            <p>Usually <strong>tsnames.ora</strong> file is located under <strong>&lt;OracleInstallationFolder&gt;\NETWORK\ADMIN</strong> directory. If you forgot where the Oracle DB Instance is installed use Windows File Search.</p>
                           
-                            <p class="flow-text">Open the file, using any text editor. Remove everything and paste those lines:</p>
+                            <p>Open the file, using any text editor. Remove everything and paste those lines:</p>
 <pre><code class="language-markup">&lt;addressname&gt; =
  (DESCRIPTION =
    (ADDRESS_LIST =
@@ -113,7 +113,7 @@ AddVMOption -Duser.region=us</code></pre>
    (SERVICE_NAME = &lt;sid&gt;)
  )
 )</code></pre>
-                            <p class="flow-text">Insted of the placeholders use your own data. It should look something like this:</p>
+                            <p>Insted of the placeholders use your own data. It should look something like this:</p>
 <pre><code class="language-markup">MYDB =
  (DESCRIPTION = 
    (ADDRESS_LIST =
@@ -123,12 +123,12 @@ AddVMOption -Duser.region=us</code></pre>
    (SERVICE_NAME = mydb)
  )
 )</code></pre>
-                            <p class="flow-text">If you are not sure what <strong>sid</should> you should put there try this query in SQL Developer or any other similar tool:</p>
+                            <p>If you are not sure what <strong>sid</should> you should put there try this query in SQL Developer or any other similar tool:</p>
 <pre><code class="language-sql">SELECT value FROM v$parameter WHERE name='service_names';</code></pre>
-                            <p class="flow-text">You'll see the correct <strong>sid</strong> in the results.</p>
-                            <p class="flow-text">That's all you need. Thanks Oracle. You can check if your config works properly by connecting to the database in <strong>sqlplus</strong>:</p>
+                            <p>You'll see the correct <strong>sid</strong> in the results.</p>
+                            <p>That's all you need. Thanks Oracle. You can check if your config works properly by connecting to the database in <strong>sqlplus</strong>:</p>
 <pre><code class="language-markup">sqlplus pshchegolevatykh/masterkey@mydb</code></pre>
-                            <p class="flow-text">Hope this was usesful.</p>
+                            <p>Hope this was usesful.</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.pshchegolevatykh.com/posts/2013/08/19/common-oracle-issues/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/intent/tweet?text=http://www.pshchegolevatykh.com/posts/2013/08/19/common-oracle-issues/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>

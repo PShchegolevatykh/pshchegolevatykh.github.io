@@ -76,70 +76,70 @@
                                     
                             </div>
                             <h4>Configuring Jenkins for CloudBees</h4>
-                            <p class="flow-text">During my Java Internship program at my new job we had to develop an enterprise-like project to learn some new things and development processes. Continious integration was a big part of it.</p>
+                            <p>During my Java Internship program at my new job we had to develop an enterprise-like project to learn some new things and development processes. Continious integration was a big part of it.</p>
                             <h5>What is CloudBees?</h5>
-                            <p class="flow-text"><a href="http://www.cloudbees.com/">CloudBees</a> is a Platform as a Service (PaaS) company that provides you with everything you need to move things to Cloud for free if you are a student.</p>
+                            <p><a href="http://www.cloudbees.com/">CloudBees</a> is a Platform as a Service (PaaS) company that provides you with everything you need to move things to Cloud for free if you are a student.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Cloudbees logo" src="images/CloudBees-Logo.png">
+                                <img data-caption="Cloudbees logo" src="images/CloudBees-Logo.png">
                             </div>
-                            <p class="flow-text">The main features include:</p>
-                            <p class="flow-text">* Jenkins Continuous Integration Server<br />* Run at Cloud feature (free cloud hosting for your applications, both web server and application server supported)<br />* Cloud Database (MySQL)<br />* Cloud Repository (Git, SVN, Maven)</p>
-                            <p class="flow-text">Besides CloudBees has very responsive tech support. They helped me a lot when I was in need. They also did frequent free webinars which also were quite helpful. <strong>CloudBees does not even require a credit card info for their free tier.</strong></p>
-                            <p class="flow-text">Of course if you are free user some of those features have certain restrictions (e.g. 300 minutes per month for the Jenkins CI Server), but in our case it was more than enough.</p>
+                            <p>The main features include:</p>
+                            <p>* Jenkins Continuous Integration Server<br />* Run at Cloud feature (free cloud hosting for your applications, both web server and application server supported)<br />* Cloud Database (MySQL)<br />* Cloud Repository (Git, SVN, Maven)</p>
+                            <p>Besides CloudBees has very responsive tech support. They helped me a lot when I was in need. They also did frequent free webinars which also were quite helpful. <strong>CloudBees does not even require a credit card info for their free tier.</strong></p>
+                            <p>Of course if you are free user some of those features have certain restrictions (e.g. 300 minutes per month for the Jenkins CI Server), but in our case it was more than enough.</p>
                             <h5>Run at Cloud Configuration</h5>
-                            <p class="flow-text">After you logged in to the system you see <strong>Control Panel</strong>. Add a new application in <strong>Applications</strong> section there.</p>
+                            <p>After you logged in to the system you see <strong>Control Panel</strong>. Add a new application in <strong>Applications</strong> section there.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Run at Cloud control panel" src="images/rac.png">
+                                <img data-caption="Run at Cloud control panel" src="images/rac.png">
                             </div>
-                            <p class="flow-text">Then choose a *.war file from the list. After that you will be able to choose an application container (EJB or just servlet container). <strong>Basic Java Webapp</strong> option usually assumes Tomcat 6. The newer versions of Tomcat also supported but require some additional manipulations.</p>
+                            <p>Then choose a *.war file from the list. After that you will be able to choose an application container (EJB or just servlet container). <strong>Basic Java Webapp</strong> option usually assumes Tomcat 6. The newer versions of Tomcat also supported but require some additional manipulations.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Application Configuration" src="images/prof.png">
+                                <img data-caption="Application Configuration" src="images/prof.png">
                             </div>
-                            <p class="flow-text">If you have any flat file loggers in your application (like log4j) you should switch them from the file to console output, because you do not have direct access to the server file system. Unfortunately the HTTPS authentication was not supported for a free tier. You have to disable it. To make working with logs easier (e.g. search for particular things) there is an addon called <strong>Papertrail</strong>.</p>
+                            <p>If you have any flat file loggers in your application (like log4j) you should switch them from the file to console output, because you do not have direct access to the server file system. Unfortunately the HTTPS authentication was not supported for a free tier. You have to disable it. To make working with logs easier (e.g. search for particular things) there is an addon called <strong>Papertrail</strong>.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Papertrail Logs" src="images/ppt.png">
+                                <img data-caption="Papertrail Logs" src="images/ppt.png">
                             </div>
-                            <p class="flow-text">You should enable it for your app.</p>
+                            <p>You should enable it for your app.</p>
                             <h5>Jenkins Configuration</h5>
-                            <p class="flow-text">To create a build server instance on CloudBees you should go to the <strong>Control Panel</strong> and click add button under <strong>Builds</strong> section. When the initial configuration is done choose <strong>Manage Jenkins</strong> from the left hand side menu and then click on <strong>Configure System</strong>.</p>
+                            <p>To create a build server instance on CloudBees you should go to the <strong>Control Panel</strong> and click add button under <strong>Builds</strong> section. When the initial configuration is done choose <strong>Manage Jenkins</strong> from the left hand side menu and then click on <strong>Configure System</strong>.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Manage Jenkins" src="images/manage.png">
+                                <img data-caption="Manage Jenkins" src="images/manage.png">
                             </div>
-                            <p class="flow-text">There are many properties, but the most important are <strong>JDK</strong> and <strong>Maven</strong> sections. You should be able to chose from preinstalled versions or you can install a new ones. The main thing here is to properly specify <strong>JAVA_HOME</strong> and <strong>MAVEN_HOME</strong> variables.</p>
-                            <p class="flow-text">After server is ready you can create a new job from the left hand side menu.</p>
+                            <p>There are many properties, but the most important are <strong>JDK</strong> and <strong>Maven</strong> sections. You should be able to chose from preinstalled versions or you can install a new ones. The main thing here is to properly specify <strong>JAVA_HOME</strong> and <strong>MAVEN_HOME</strong> variables.</p>
+                            <p>After server is ready you can create a new job from the left hand side menu.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="New Jenkins Job" src="images/newjob.png">
+                                <img data-caption="New Jenkins Job" src="images/newjob.png">
                             </div>
-                            <p class="flow-text">For Maven projects there is already <strong>Build a maven 2/3 project</strong> option that would eliminate all the manual configuration steps for your project. After that you can move on to the job configuration.</p>
+                            <p>For Maven projects there is already <strong>Build a maven 2/3 project</strong> option that would eliminate all the manual configuration steps for your project. After that you can move on to the job configuration.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Jenkins Job configuration" src="images/jobConfig.png">
+                                <img data-caption="Jenkins Job configuration" src="images/jobConfig.png">
                             </div>
-                            <p class="flow-text">Here you can specify the name of your job. CloudBees public key should be inserted automatically. You obtain it during account registration process. Go to the <strong>Source Code Management</strong> and <strong>Build Triggers</strong> sections.</p>
+                            <p>Here you can specify the name of your job. CloudBees public key should be inserted automatically. You obtain it during account registration process. Go to the <strong>Source Code Management</strong> and <strong>Build Triggers</strong> sections.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Build triggers" src="images/btriggers.png">
+                                <img data-caption="Build triggers" src="images/btriggers.png">
                             </div>
-                            <p class="flow-text">In <strong>Source Code Management</strong> section you should specify the type and repository URL. Your Code Repository can be installed anywhere including github or google code. Pay attention to the <strong>Check-out Strategy</strong> option. The <strong>Update as much as possible</strong>, which is default, does not always work properly (e.g. in my case all the files that should be deleted were still on the CI server). So I prefer <strong>Always check-out fresh copy</strong> option. It is a bit slower but safe.</p>
-                            <p class="flow-text">The <strong>Build Triggers</strong> section is used to tell the CI server when to start the build. I prefer periodically <strong>Poll SCM</strong> to see if there new version available and in the schedule I set all five parameters to stars(*) to poll every minute.</p>
-                            <p class="flow-text">The next two sections are <strong>Build</strong> and <strong>Post Steps</strong>.</p>
+                            <p>In <strong>Source Code Management</strong> section you should specify the type and repository URL. Your Code Repository can be installed anywhere including github or google code. Pay attention to the <strong>Check-out Strategy</strong> option. The <strong>Update as much as possible</strong>, which is default, does not always work properly (e.g. in my case all the files that should be deleted were still on the CI server). So I prefer <strong>Always check-out fresh copy</strong> option. It is a bit slower but safe.</p>
+                            <p>The <strong>Build Triggers</strong> section is used to tell the CI server when to start the build. I prefer periodically <strong>Poll SCM</strong> to see if there new version available and in the schedule I set all five parameters to stars(*) to poll every minute.</p>
+                            <p>The next two sections are <strong>Build</strong> and <strong>Post Steps</strong>.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Build and Post Steps" src="images/bps.png">
+                                <img data-caption="Build and Post Steps" src="images/bps.png">
                             </div>
-                            <p class="flow-text">In a <strong>Build</strong> section for Maven projects specify the path to the *.pom file and additional goals (if necessary).</p>
-                            <p class="flow-text"><strong>Post Steps</strong> section is perfect to apply new database scripts automatically. I made it that after each build the database is recreated with newly applied scripts (drop tables -> create tables -> insert some test data). In my team we found this really useful.</p>
-                            <p class="flow-text"><strong>Build Settings</strong> allow you to set up E-mail (or any other) notifications if the build gets broken. So people can fix the build as fast as they can.</p>
+                            <p>In a <strong>Build</strong> section for Maven projects specify the path to the *.pom file and additional goals (if necessary).</p>
+                            <p><strong>Post Steps</strong> section is perfect to apply new database scripts automatically. I made it that after each build the database is recreated with newly applied scripts (drop tables -> create tables -> insert some test data). In my team we found this really useful.</p>
+                            <p><strong>Build Settings</strong> allow you to set up E-mail (or any other) notifications if the build gets broken. So people can fix the build as fast as they can.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Build settings" src="images/bs.png">
+                                <img data-caption="Build settings" src="images/bs.png">
                             </div>
-                            <p class="flow-text">Post-build Actions are mainly used for automated deployment. In case of CloudBees you should provide a valid ApplicationID (should correspond to "Run at Cloud" Application name). The "first match" pattern is used to locate your *.war file and deploy it to the server.</p>
-                            <p class="flow-text">Your job configuration is finally finished. You can click <strong>Save</strong> button and see if it works.</p>
+                            <p>Post-build Actions are mainly used for automated deployment. In case of CloudBees you should provide a valid ApplicationID (should correspond to "Run at Cloud" Application name). The "first match" pattern is used to locate your *.war file and deploy it to the server.</p>
+                            <p>Your job configuration is finally finished. You can click <strong>Save</strong> button and see if it works.</p>
                             <h5>Allow Anonymous Access to the Job</h5>
-                            <p class="flow-text">Jenkins security model is based on roles and permissions. To enable anonymous access you should enable it in Jenkins config first: <strong>Manage Jenkins ->Configure System->Enable read-only access for anonymous users</strong>. Then you can manage roles using the Roles plugin which should be already installed on CloudBees.</p>
+                            <p>Jenkins security model is based on roles and permissions. To enable anonymous access you should enable it in Jenkins config first: <strong>Manage Jenkins ->Configure System->Enable read-only access for anonymous users</strong>. Then you can manage roles using the Roles plugin which should be already installed on CloudBees.</p>
                             <div class="center">
-                                <img class="materialboxed" data-caption="Role settings" src="images/roles.png">
+                                <img data-caption="Role settings" src="images/roles.png">
                             </div>
-                            <p class="flow-text">Role editor is pretty self-explanatary. Yellow highlighting means that permission is granted (checked) by default.</p>
+                            <p>Role editor is pretty self-explanatary. Yellow highlighting means that permission is granted (checked) by default.</p>
                             <h5>Other similar services</h5>
-                            <p class="flow-text">If you are a .NET person there is a <a href="http://tfs.visualstudio.com/">Team Foundation Service</a>, which includes source control, build server, planing  and test execution. It is also free for teams of no more than five people. It is fully integrated with Visual Studio. If you want a free cloud database and some other features that are not presented in TFS you can try <a href="https://appharbor.com/">AppHarbor</a>. I've tried it and it's great!</p>
+                            <p>If you are a .NET person there is a <a href="http://tfs.visualstudio.com/">Team Foundation Service</a>, which includes source control, build server, planing  and test execution. It is also free for teams of no more than five people. It is fully integrated with Visual Studio. If you want a free cloud database and some other features that are not presented in TFS you can try <a href="https://appharbor.com/">AppHarbor</a>. I've tried it and it's great!</p>
                             <div class="right social-share">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.pshchegolevatykh.com/posts/2013/07/09/configuring-jenkins-for-cloudbees/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/intent/tweet?text=http://www.pshchegolevatykh.com/posts/2013/07/09/configuring-jenkins-for-cloudbees/" onclick="window.open(this.href,'_blank', 'width=700, height=500'); return false;"><i class="fa fa-twitter"></i></a>
