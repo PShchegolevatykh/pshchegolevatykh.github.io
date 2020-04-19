@@ -1,34 +1,113 @@
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-nav a {
-  color: #444;
-}
-.blog a {
-  color: #ffab40;
-}
-#comments-section a {
-  color: #ffab40;
+html, html[data-theme="light"] {
+  --front-elements-background-color: white;
+  --back-elements-background-color: white;
+  --main-text-color: rgba(0,0,0,0.87);
+  --links-color: #ffab40;
+  --description-text-color: #757575;
+  --navbar-text-color: #444;
+  --navbar-items-hover-background-color: #E5E5E5;
+  --links-hover-color: #ffe276;
 }
 
+html[data-theme="dark"] {
+  --main-text-color: rgb(217, 217, 217);
+  --description-text-color: rgb(110, 118, 125);
+  --front-elements-background-color: rgb(21, 24, 28);
+  --back-elements-background-color: black;
+  --links-color: rgb(27, 149, 224);
+  --links-hover-color: rgb(110, 203, 255);
+  --navbar-text-color: rgb(217, 217, 217);
+  --navbar-items-hover-background-color: rgb(21, 24, 28);
+}
+
+@media (prefers-color-scheme: dark) {
+  html, html[data-theme="dark"] {
+    --main-text-color: rgb(217, 217, 217);
+    --description-text-color: rgb(110, 118, 125);
+    --front-elements-background-color: rgb(21, 24, 28);
+    --back-elements-background-color: black;
+    --links-color: rgb(27, 149, 224);
+    --links-hover-color: rgb(110, 203, 255);
+    --navbar-text-color: rgb(217, 217, 217);
+    --navbar-items-hover-background-color: rgb(21, 24, 28);
+  }
+
+  html[data-theme="light"] {
+    --front-elements-background-color: white;
+    --back-elements-background-color: white;
+    --main-text-color: rgba(0,0,0,0.87);
+    --links-color: #ffab40;
+    --description-text-color: #757575;
+    --navbar-text-color: #444;
+    --navbar-items-hover-background-color: #E5E5E5;
+    --links-hover-color: #ffe276;
+  }
+}
+
+html {
+  color: var(--main-text-color);
+  background-color: var(--back-elements-background-color);
+}
+
+nav {
+  background-color: var(--back-elements-background-color);
+}
+nav ul a,
+nav .brand-logo {
+  color: var(--navbar-text-color);
+}
+nav a {
+  color: var(--navbar-text-color);
+}
+nav li:hover {
+  background-color: var(--navbar-items-hover-background-color);
+}
+.side-nav {
+  background-color: var(--back-elements-background-color);
+}
+.side-nav a {
+  color: var(--main-text-color);
+}
+
+.blog a {
+  color: var(--links-color);
+}
+.blog a:hover {
+  color: var(--links-hover-color);
+}
+#comments-section a {
+  color: var(--links-color);
+}
+#comments-section a:hover {
+  color: var(--links-hover-color);
+}
+
+.card {
+  background-color: var(--front-elements-background-color);
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: var(--links-color);
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+  color: var(--links-hover-color);
+}
 .card-action .col {
   padding: 0;
-}
-.blog-column-container .card-action .card-social-share a:not(.btn):not(.btn-large):not(.btn-floating) {
-  margin-right: 0;
-  margin-left: 15px;
-}
-.blog-meta-wrapper .single-post-date {
-  color: rgba(0,0,0,0.57);
-}
-.disqus-comment-count {
-  margin-left: 5px;
 }
 .card-subtitle {
   margin-bottom: 16px;
 }
 
+.blog-column-container .card-action .card-social-share a:not(.btn):not(.btn-large):not(.btn-floating) {
+  margin-right: 0;
+  margin-left: 15px;
+}
+.blog-meta-wrapper .single-post-date {
+  color: var(--main-text-color);
+}
+.disqus-comment-count {
+  margin-left: 5px;
+}
 
 /* Forcing card image to display in 16:9 format */
 .blog-column-container .card.small .card-image, .card.medium .card-image, .card.large .card-image {
@@ -59,7 +138,7 @@ nav a {
 }
 
 .blog-content {
-  color: rgba(0,0,0,0.87);
+  color: var(--main-text-color);
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -67,4 +146,8 @@ nav a {
 
 .player-name {
   white-space: nowrap;
+}
+
+.grey-text.text-darken-1 {
+  color: var(--description-text-color)!important;
 }
