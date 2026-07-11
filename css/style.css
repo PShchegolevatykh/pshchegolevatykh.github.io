@@ -151,3 +151,9 @@ nav li:hover {
 .grey-text.text-darken-1 {
   color: var(--description-text-color)!important;
 }
+
+.inline-emoji {
+  height: 1.2em;
+  width: auto;
+  vertical-align: -0.2em; /* Aligns the graphic nicely with the text baseline */
+}
