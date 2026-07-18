@@ -157,3 +157,39 @@ nav li:hover {
   width: auto;
   vertical-align: -0.2em; /* Aligns the graphic nicely with the text baseline */
 }
+
+.cw-retro,
+.cw-retro * {
+    all: revert;
+    table-layout: auto;
+}
+
+/* Center logos */
+.cw-retro .team-logo {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Center overall score */
+.cw-retro .match-score {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Center individual scores */
+.cw-retro .score {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+/* Player alignment */
+.player-left {
+    text-align: left;
+}
+
+.player-right {
+    text-align: right;
+}
