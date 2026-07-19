@@ -97,4 +97,6 @@ $(document).ready(function () {
                });
           })
           .catch(console.error);
+
+     $(document).trigger("themeinitialized");
 });
