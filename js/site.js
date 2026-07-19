@@ -88,6 +88,28 @@ $(document).ready(function () {
           return result;
      }
 
+     function createUtterances(pathname) {
+          const script = document.createElement("script");
+
+          script.src = "https://utteranc.es/client.js";
+          script.async = true;
+          script.crossOrigin = "anonymous";
+
+          script.setAttribute("repo", "PShchegolevatykh/pshchegolevatykh.github.io");
+          script.setAttribute("issue-term", pathname);
+          script.setAttribute(
+               "theme",
+               document.documentElement.getAttribute("data-theme") === "dark"
+                    ? "github-dark"
+                    : "github-light"
+          );
+
+          const comments = document.getElementById("comments-section");
+
+          comments.innerHTML = "";
+          comments.appendChild(script);
+     }
+
      getUtterancesCommentCounts()
           .then((counts) => {
                $('.comment-count').each(function () {
@@ -97,6 +119,11 @@ $(document).ready(function () {
                });
           })
           .catch(console.error);
+
+     // export global functions
+     window.blog = {
+          createUtterances
+     };
 
      $(document).trigger("themeinitialized");
 });

@@ -314,7 +314,6 @@
             
 
             <div id="comments-section"></div>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
         </div>
                                     
 
@@ -334,29 +333,8 @@
         <script type="text/javascript" src="../../../../../js/site.js"></script>
         <script type="text/javascript" src="../../../../../js/prism.js"></script>
         <script>
-            function createUtterances(pathname) {
-                const script = document.createElement("script");
-
-                script.src = "https://utteranc.es/client.js";
-                script.async = true;
-                script.crossOrigin = "anonymous";
-
-                script.setAttribute("repo", "PShchegolevatykh/pshchegolevatykh.github.io");
-                script.setAttribute("issue-term", pathname);
-                script.setAttribute(
-                    "theme",
-                    document.documentElement.getAttribute("data-theme") === "dark"
-                        ? "github-dark"
-                        : "github-light"
-                );
-
-                const comments = document.getElementById("comments-section");
-
-                comments.innerHTML = "";
-                comments.appendChild(script);
-            }
             $(document).on("themeinitialized", function () {
-                createUtterances(window.location.pathname);
+                window.blog.createUtterances(window.location.pathname);
             });
         </script>
         </script>
