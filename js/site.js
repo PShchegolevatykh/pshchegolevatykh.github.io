@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
      $('.button-collapse').sideNav();
 
      // this checks whether system dark mode is set
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
           setUtterancesTheme(theme);
      }
-     
+
      // Initial theme
      const savedTheme = sessionStorage.getItem('theme');
 
@@ -58,13 +58,43 @@ $(document).ready(function() {
 
      // Manual toggle
      $('.theme-toggle').on('click', function () {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
+          const currentTheme = document.documentElement.getAttribute('data-theme');
 
-        applyTheme(
-            currentTheme === 'dark'
-                ? 'light'
-                : 'dark',
-            true
-        );
-    });
+          applyTheme(
+               currentTheme === 'dark'
+                    ? 'light'
+                    : 'dark',
+               true
+          );
+     });
+
+     async function getUtterancesCommentCounts() {
+          const response = await fetch(
+               'https://api.github.com/repos/PShchegolevatykh/pshchegolevatykh.github.io/issues?state=all&per_page=100'
+          );
+
+          if (!response.ok) {
+               throw new Error(`GitHub API returned ${response.status}`);
+          }
+
+          const issues = await response.json();
+
+          const result = new Map();
+
+          for (const issue of issues) {
+               result.set(issue.title, issue.comments);
+          }
+
+          return result;
+     }
+
+     getUtterancesCommentCounts()
+          .then((counts) => {
+               $('.comment-count').each(function () {
+                    const pathname = $(this).data('post-url');
+                    const count = counts.get(pathname) ?? 0;
+                    $(this).text(count);
+               });
+          })
+          .catch(console.error);
 });

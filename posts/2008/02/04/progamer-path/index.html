@@ -313,7 +313,7 @@
                 </div>
             
 
-            <div id="comments-section"><div id="disqus_thread"></div></div>
+            <div id="comments-section"></div>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
         </div>
                                     
@@ -333,25 +333,29 @@
         <script type="text/javascript" src="../../../../../js/materialize.min.js"></script>
         <script type="text/javascript" src="../../../../../js/site.js"></script>
         <script type="text/javascript" src="../../../../../js/prism.js"></script>
-        <script src="https://utteranc.es/client.js"
-            repo="PShchegolevatykh/pshchegolevatykh.github.io"
-            issue-term="/posts/2008/02/04/progamer-path/"
-            theme="preferred-color-scheme"
-            crossorigin="anonymous"
-            async>
-        </script>
         <script>
-            var disqus_config = function() {
-                this.page.url = "https://pshchegolevatykh.github.io/posts/2008/02/04/progamer-path/"; // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "/posts/2008/02/04/progamer-path/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document,
-                s = d.createElement('script');
-                s.src = '//pshchegolevatykh.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
+            (function createUtterances(pathname) {
+                const script = document.createElement("script");
+
+                script.src = "https://utteranc.es/client.js";
+                script.async = true;
+                script.crossOrigin = "anonymous";
+
+                script.setAttribute("repo", "PShchegolevatykh/pshchegolevatykh.github.io");
+                script.setAttribute("issue-term", pathname);
+                script.setAttribute(
+                    "theme",
+                    document.documentElement.getAttribute("data-theme") === "dark"
+                        ? "github-dark"
+                        : "github-light"
+                );
+
+                const comments = document.getElementById("comments-section");
+
+                comments.innerHTML = "";
+                comments.appendChild(script);
+            })('/posts/2008/02/04/progamer-path/');
+        </script>
         </script>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PBWB3SL4Z"></script>
