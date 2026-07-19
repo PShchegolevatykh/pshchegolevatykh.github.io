@@ -161,7 +161,11 @@ nav li:hover {
 .cw-retro,
 .cw-retro * {
     all: revert;
-    table-layout: auto;
+}
+
+.cw-retro, .cw-retro td {
+  border-collapse: separate;
+  border: 1px solid #999;
 }
 
 /* Center logos */
