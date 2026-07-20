@@ -68,25 +68,7 @@ $(document).ready(function () {
           );
      });
 
-     async function getUtterancesCommentCounts() {
-          const response = await fetch(
-               'https://api.github.com/repos/PShchegolevatykh/pshchegolevatykh.github.io/issues?state=all&per_page=100'
-          );
-
-          if (!response.ok) {
-               throw new Error(`GitHub API returned ${response.status}`);
-          }
-
-          const issues = await response.json();
-
-          const result = new Map();
-
-          for (const issue of issues) {
-               result.set(issue.title, issue.comments);
-          }
-
-          return result;
-     }
+     $(document).trigger("themeinitialized");
 
      function createUtterances(pathname) {
           const script = document.createElement("script");
@@ -110,20 +92,9 @@ $(document).ready(function () {
           comments.appendChild(script);
      }
 
-     getUtterancesCommentCounts()
-          .then((counts) => {
-               $('.comment-count').each(function () {
-                    const pathname = $(this).data('post-url');
-                    const count = counts.get(pathname) ?? 0;
-                    $(this).text(count);
-               });
-          })
-          .catch(console.error);
-
      // export global functions
      window.blog = {
           createUtterances
      };
 
-     $(document).trigger("themeinitialized");
 });
