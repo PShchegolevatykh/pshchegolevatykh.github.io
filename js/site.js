@@ -1,3 +1,30 @@
+function createUtterances(pathname) {
+     const script = document.createElement("script");
+
+     script.src = "https://utteranc.es/client.js";
+     script.async = true;
+     script.crossOrigin = "anonymous";
+
+     script.setAttribute("repo", "PShchegolevatykh/pshchegolevatykh.github.io");
+     script.setAttribute("issue-term", pathname);
+     script.setAttribute(
+          "theme",
+          document.documentElement.getAttribute("data-theme") === "dark"
+               ? "github-dark"
+               : "github-light"
+     );
+
+     const comments = document.getElementById("comments-section");
+
+     comments.innerHTML = "";
+     comments.appendChild(script);
+}
+
+// export global functions
+window.blog = {
+     createUtterances
+};
+
 $(document).ready(function () {
      $('.button-collapse').sideNav();
 
@@ -69,32 +96,4 @@ $(document).ready(function () {
      });
 
      $(document).trigger("themeinitialized");
-
-     function createUtterances(pathname) {
-          const script = document.createElement("script");
-
-          script.src = "https://utteranc.es/client.js";
-          script.async = true;
-          script.crossOrigin = "anonymous";
-
-          script.setAttribute("repo", "PShchegolevatykh/pshchegolevatykh.github.io");
-          script.setAttribute("issue-term", pathname);
-          script.setAttribute(
-               "theme",
-               document.documentElement.getAttribute("data-theme") === "dark"
-                    ? "github-dark"
-                    : "github-light"
-          );
-
-          const comments = document.getElementById("comments-section");
-
-          comments.innerHTML = "";
-          comments.appendChild(script);
-     }
-
-     // export global functions
-     window.blog = {
-          createUtterances
-     };
-
 });
