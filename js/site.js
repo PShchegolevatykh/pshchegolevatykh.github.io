@@ -25,7 +25,7 @@ window.blog = {
      createUtterances
 };
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
      $('.button-collapse').sideNav();
 
      // this checks whether system dark mode is set
@@ -52,11 +52,10 @@ $(document).ready(function () {
      function applyTheme(theme, rememberChoice) {
           document.documentElement.setAttribute('data-theme', theme);
 
-          $('.theme-toggle').text(
-               theme === 'dark'
+          document.querySelectorAll('.theme-toggle')
+               .forEach(x => x.textContent = theme === 'dark'
                     ? 'Light Theme'
-                    : 'Dark Theme'
-          );
+                    : 'Dark Theme');
 
           if (rememberChoice) {
                sessionStorage.setItem('theme', theme);
@@ -84,7 +83,7 @@ $(document).ready(function () {
      });
 
      // Manual toggle
-     $('.theme-toggle').on('click', function () {
+     document.querySelectorAll('.theme-toggle').forEach(e => e.addEventListener('click', () => {
           const currentTheme = document.documentElement.getAttribute('data-theme');
 
           applyTheme(
@@ -93,7 +92,9 @@ $(document).ready(function () {
                     : 'dark',
                true
           );
-     });
+     }));
 
-     $(document).trigger("themeinitialized");
+     document.dispatchEvent(
+          new CustomEvent("themeinitialized")
+     );
 });
